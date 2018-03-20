@@ -1,0 +1,19 @@
+page-main {
+
+}
+
+
+.user-profile-img   {
+    height: calc(#{$toolbar-md-height} - 12px);
+        border-radius: 50%;
+}
+
+ion-title   {
+    // transform: translateX(calc((#{$toolbar-md-height} - 12px)/2 ));
+}
+ion-navbar{
+    border: 0px !important;
+    border-bottom-color: transparent !important;
+    background-image: none !important;
+    border-bottom: none !important;
+}

@@ -17,16 +17,13 @@
   "TUTORIAL_SKIP_BUTTON": "Skip",
   "TUTORIAL_CONTINUE_BUTTON": "Continue",
 
-  "TUTORIAL_SLIDE1_TITLE": "Welcome to the Ionic Super Starter",
-  "TUTORIAL_SLIDE1_DESCRIPTION": "The <b>Ionic Super Starter</b> is a fully-featured Ionic starter with many pre-built pages and best practices.",
+  "TUTORIAL_SLIDE1_TITLE": "Welcome to the DDPrime App.",
+  "TUTORIAL_SLIDE1_DESCRIPTION": "<b>DDPrime</b> is a fully-featured app that works with DD Free Dish TV to provide a seemless modern interface and Internet Browsing to you.",
 
-  "TUTORIAL_SLIDE2_TITLE": "How to use the Super Starter",
-  "TUTORIAL_SLIDE2_DESCRIPTION": "Assemble the various page types you want and remove the ones you don't. We've provided many common mobile app page layouts, like login and signup pages, tabs, and this tutorial page.",
+  "TUTORIAL_SLIDE3_TITLE": "How to use the Setup DDPrime",
+  "TUTORIAL_SLIDE3_DESCRIPTION": "1) Attach DDPrime Hardware Addon to the DD Free DishTV Set-Top Box.<br>2) Connect the DDPrime Compute Module to TV.<br>3) Connect the Compute Module to the DD Free DishTV Box.<br>4) Connect the Compute Module to DDPrime Hardware Addon/",
 
-  "TUTORIAL_SLIDE3_TITLE": "Getting Started",
-  "TUTORIAL_SLIDE3_DESCRIPTION": "Need help? Check out the Super Starter README for a full tutorial",
-
-  "TUTORIAL_SLIDE4_TITLE": "Ready to Play?",
+  "TUTORIAL_SLIDE4_TITLE": "Ready to Go?",
 
   "WELCOME_INTRO": "The starting point for your next great Ionic app",
 

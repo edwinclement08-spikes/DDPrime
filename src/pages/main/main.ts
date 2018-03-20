@@ -1,0 +1,35 @@
+import { Component } from '@angular/core';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
+/**
+ * Generated class for the MainPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+
+@IonicPage()
+@Component({
+  selector: 'page-main',
+  templateUrl: 'main.html',
+})
+export class MainPage {
+  user: any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.user = {
+      img: "../assets/img/photo-crop.jpeg"
+    }
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad MainPage');
+    this.user = {
+      img: "../assets/img/photo-crop.jpeg"
+    }
+  }
+
+  showUserPage() {
+
+  }
+}
