@@ -35,6 +35,8 @@ export class SignupPage {
 
   doSignup() {
     // Attempt to login in through our User service
+    // this.navCtrl.setRoot(MainPage);
+    // return;
     this.user.signup(this.account).subscribe((resp) => {
       this.navCtrl.setRoot(MainPage);
     }, (err) => {

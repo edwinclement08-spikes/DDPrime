@@ -1,7 +1,11 @@
 page-main {
 
 }
+.smallCardScroll {
+    height: 48vw; 
+}
 
+$element-height:33%;
 
 .user-profile-img   {
     height: calc(#{$toolbar-md-height} - 12px);

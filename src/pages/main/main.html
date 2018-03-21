@@ -6,7 +6,7 @@
 -->
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle >
+    <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
 
@@ -22,5 +22,13 @@
 
 
 <ion-content padding>
+<big-card [img]="bigImages[0]"></big-card>
+
+  <ion-scroll class="smallCardScroll" scrollX="true" style="white-space: nowrap;">
+    <card *ngFor="let image of images" [i1]="image"></card>
+
+  </ion-scroll>
+
+  <big-card *ngFor="let image of bigImages" [img]="image"></big-card>
 
 </ion-content>
