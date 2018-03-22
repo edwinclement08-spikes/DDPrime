@@ -1,3 +1,4 @@
+import { BigCardData } from './../../models/bigCard';
 import { Component, Input } from '@angular/core';
 
 /**
@@ -13,15 +14,20 @@ import { Component, Input } from '@angular/core';
 export class BigCardComponent {
 
   text: string;
-  @Input() img:string;
-
+  @Input() data: BigCardData;
+  @Input() img: string;
  
   constructor() {
-    console.log('Hello BigCardComponent Component');
-    this.text = 'Hello World';
+    console.log('Hello BigCardComponent Component - constuctor');
+    
+
 
   }
-  ionViewDidLoad(){
+  ngOnInit(){
+    console.log('Hello BigCardComponent Component - ngOnInit');
+    console.log(this.data);
+    
+    
  
   }
   

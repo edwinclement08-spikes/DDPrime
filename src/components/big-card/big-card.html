@@ -1,4 +1,7 @@
 <!-- Generated template for the BigCardComponent component -->
 <div class="outerMostBigCard">
-    <img  class="thumbnail" [src]="img" />
-  </div>
+  <div class="rating">{{data.rating}}</div>
+  <div  class="title">{{data.title}}</div>
+  <div  class="genreYearDuration">{{data.genre}} ({{data.releaseYear}}, {{data.duration}})</div>
+  <img class="thumbnail" src={{data.imgUrl}} />
+</div>

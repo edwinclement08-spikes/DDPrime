@@ -1,21 +1,38 @@
-page-main {
+page-main {}
+
+@font-face {
+    font-family: LouisGeorgeCafeBold;
+    src: url("assets/fonts/Louis George Cafe Bold.ttf") format("ttf");
+    font-weight: 200
+}
+
+// body {
+//     font-family: Ormont_Light !important;
+// }
+
+ion-title div {
+    align-self: center !important;
+    text-align: center;
+    font-family: LouisGeorgeCafeBold !important;
+    font: bold;
 
 }
+
 .smallCardScroll {
-    height: 48vw; 
+    height: 48vw;
 }
 
 $element-height:33%;
-
-.user-profile-img   {
+.user-profile-img {
     height: calc(#{$toolbar-md-height} - 12px);
-        border-radius: 50%;
+    border-radius: 50%;
 }
 
-ion-title   {
+ion-title {
     // transform: translateX(calc((#{$toolbar-md-height} - 12px)/2 ));
 }
-ion-navbar{
+
+ion-navbar {
     border: 0px !important;
     border-bottom-color: transparent !important;
     background-image: none !important;

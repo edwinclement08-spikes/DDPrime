@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { BigCardData } from '../../models/bigCard';
 
 /**
  * Generated class for the MainPage page.
@@ -18,6 +19,8 @@ export class MainPage {
 
   images: any;
   bigImages: any;
+
+  bigCardDatas: BigCardData[];
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -45,31 +48,18 @@ export class MainPage {
       "assets/img/movies/big/fantastic_four.jpg",
       "assets/img/movies/big/Mockingjay.jpg",
       "assets/img/movies/big/horns.jpg",
-      "assets/img/movies/big/movie-guide-march.jpg"]
-
+      "assets/img/movies/big/movie-guide-march.jpg"];
+      
+    this.bigCardDatas = [
+      new BigCardData("Fantastic Four", 2014, "2:12", 4.5, "assets/img/movies/big/fantastic_four.jpg", "Action")
+    ]
 
   }
 
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad MainPage');
-    this.user = {
-      img: "assets/img/photo-crop.jpeg"
-    }
 
-    this.images = [
-      "assets/img/movies/blade runner 2049.jpg",
-      "assets/img/movies/ResidentEvil.jpg",
-      "assets/img/movies/happy.jpg",
-
-      "assets/img/movies/dunkirk.jpg",
-      "assets/img/movies/fistFight.jpg",
-      "assets/img/movies/aWrinkleInTime.jpg",
-
-      "assets/img/movies/baywatch.jpg",
-      "assets/img/movies/tombRaider.jpg",
-      "assets/img/movies/blackPanther.jpg",
-
-    ];
   }
 
 
