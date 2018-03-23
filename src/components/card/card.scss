@@ -1,14 +1,11 @@
-card {
-
-}
-
-.outerMost   {
-    // height:34%;
-    height:32%;
-    width:32%;
+.outerMost {
+    height: 32%;
+    width: 32%;
     display: inline-block;
-}
+    margin-right: 5px;
 
-.thumbnail   {
-    border-radius: 7px;
+    .thumbnail {
+        border-radius: 7px;
+    }
+
 }

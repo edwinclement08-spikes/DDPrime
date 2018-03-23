@@ -1,40 +1,51 @@
-page-main {}
-
-@font-face {
-    font-family: LouisGeorgeCafeBold;
-    src: url("assets/fonts/Louis George Cafe Bold.ttf") format("ttf");
-    font-weight: 200
-}
-
-// body {
-//     font-family: Ormont_Light !important;
-// }
-
-ion-title div {
-    align-self: center !important;
-    text-align: center;
-    font-family: LouisGeorgeCafeBold !important;
-    font: bold;
-
-}
-
-.smallCardScroll {
-    height: 48vw;
-}
-
-$element-height:33%;
-.user-profile-img {
-    height: calc(#{$toolbar-md-height} - 12px);
-    border-radius: 50%;
-}
-
-ion-title {
-    // transform: translateX(calc((#{$toolbar-md-height} - 12px)/2 ));
-}
-
-ion-navbar {
-    border: 0px !important;
-    border-bottom-color: transparent !important;
-    background-image: none !important;
-    border-bottom: none !important;
+page-main {
+    @font-face {
+        font-family: LouisGeorgeCafeBold;
+        src: url("assets/fonts/Louis George Cafe Bold.ttf") format("ttf");
+        font-weight: 200
+    }
+    ion-navbar {
+        border: 0px !important;
+        border-bottom-color: transparent !important;
+        background-image: none !important;
+        border-bottom: none !important;
+        ion-title {
+            // transform: translateX(calc((#{$toolbar-md-height} - 12px)/2 ));
+            div {
+                align-self: center !important;
+                text-align: center;
+                font-family: LouisGeorgeCafeBold !important;
+                font: bold;
+            }
+        }
+        .user-profile-img {
+            height: calc(#{$toolbar-md-height} - 12px);
+            border-radius: 50%;
+        }
+    }
+    hr.style-two {
+        border: 0;
+        height: 1px;
+        margin: 15px 0px;
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0.0), rgba(92, 92, 92, 0.75), rgba(255, 255, 255, 0.0));
+    }
+    .subtitle {
+        line-height: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        .title {
+            font-size: 1.6em;
+            font-weight: bold;
+            vertical-align: middle;
+        }
+        .action {
+            font-size: 1.2em;
+            vertical-align: middle;
+            color: red;
+            float: right;
+        }
+    }
+    .smallCardScroll {
+        height: 48vw;
+    }
 }

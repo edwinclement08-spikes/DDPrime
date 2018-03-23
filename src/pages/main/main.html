@@ -22,13 +22,26 @@
 
 
 <ion-content padding>
-<big-card [data]="bigCardDatas[0]"></big-card>
+  <big-card [data]="bigCardDatas[0]"></big-card>
+
+  <hr class="style-two">
+
+  <div class="subtitle">
+    <span class="title">Trending</span>
+    <span class="action">See All</span>
+  </div>
 
   <ion-scroll class="smallCardScroll" scrollX="true" style="white-space: nowrap;">
     <card *ngFor="let image of images" [i1]="image"></card>
 
   </ion-scroll>
 
-  <!-- <big-card *ngFor="let image of bigImages" [img]="image"></big-card> -->
 
+
+<ion-footer>
+    <ion-toolbar>
+      <ion-searchbar (ionInput)="getSearchItems($event)" (ionCancel)="onCancel($event)"
+      placeholder="Search"></ion-searchbar>
+    </ion-toolbar>
+  </ion-footer>
 </ion-content>

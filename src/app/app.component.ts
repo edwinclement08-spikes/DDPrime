@@ -12,13 +12,15 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
   template: `<ion-menu [content]="content">
     <ion-header>
       <ion-toolbar>
-        <ion-title>Pages</ion-title>
+        <ion-title>Welcome, {{username}}</ion-title>
       </ion-toolbar>
     </ion-header>
 
     <ion-content>
       <ion-list>
+        
         <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+          <span  [ngClass]="p.icon"></span>
           {{p.title}}
         </button>
       </ion-list>
@@ -29,21 +31,29 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
 })
 export class MyApp {
   rootPage = FirstRunPage;
+  username: string;
 
   @ViewChild(Nav) nav: Nav;
 
   pages: any[] = [
-    { title: 'Tutorial', component: 'TutorialPage' },
-    { title: 'Welcome', component: 'WelcomePage' },
-    { title: 'Tabs', component: 'TabsPage' },
-    { title: 'Cards', component: 'CardsPage' },
-    { title: 'Content', component: 'ContentPage' },
-    { title: 'Login', component: 'LoginPage' },
-    { title: 'Signup', component: 'SignupPage' },
-    { title: 'Master Detail', component: 'ListMasterPage' },
-    { title: 'Menu', component: 'MenuPage' },
-    { title: 'Settings', component: 'SettingsPage' },
-    { title: 'Search', component: 'SearchPage' }
+    { title: 'Home',      icon:"fa fa-home",  component: 'MainPage' },
+    { title: 'Favourites',icon:"fa fa-star",  component: 'TutorialPage' },
+    { title: 'Timeline',  icon:"fa fa-hourglass",  component: 'TutorialPage' },
+    { title: 'Settings',  icon:"fa fa-cogs ",  component: 'TutorialPage' },
+    { title: 'Internet',  icon:"fa fa-chrome ",  component: 'TutorialPage' },
+
+    // { title: 'Favourites', component: 'TutorialPage' },
+    // { title: 'Tutorial', component: 'TutorialPage' },
+    // { title: 'Welcome', component: 'WelcomePage' },
+    // { title: 'Tabs', component: 'TabsPage' },
+    // { title: 'Cards', component: 'CardsPage' },
+    // { title: 'Content', component: 'ContentPage' },
+    // { title: 'Login', component: 'LoginPage' },
+    // { title: 'Signup', component: 'SignupPage' },
+    // { title: 'Master Detail', component: 'ListMasterPage' },
+    // { title: 'Menu', component: 'MenuPage' },
+    // { title: 'Settings', component: 'SettingsPage' },
+    // { title: 'Search', component: 'SearchPage' }
   ]
 
   constructor(private translate: TranslateService, private screenOrientation: ScreenOrientation, platform: Platform, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {
@@ -60,8 +70,11 @@ export class MyApp {
 
       // }
 
+      
+
     });
     this.initTranslate();
+    this.username = "Edwin Clement";
   }
 
   initTranslate() {

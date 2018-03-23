@@ -1,7 +1,12 @@
 <!-- Generated template for the BigCardComponent component -->
 <div class="outerMostBigCard">
-  <div class="rating">{{data.rating}}</div>
-  <div  class="title">{{data.title}}</div>
-  <div  class="genreYearDuration">{{data.genre}} ({{data.releaseYear}}, {{data.duration}})</div>
+
+  <span class="ratingBar fa " *ngFor="let a of [1,2,3,4,5]; index as i" [ngClass]="{ 'fa-star' : data.rating - i,
+      'fa-star-half-o' : data.rating == i+0.5,
+      'fa-star-o' : data.rating < i+1}">
+  </span>
+
+  <div class="title">{{data.title}}</div>
+  <div class="genreYearDuration">{{data.genre}} ({{data.releaseYear}}, {{data.duration}})</div>
   <img class="thumbnail" src={{data.imgUrl}} />
 </div>

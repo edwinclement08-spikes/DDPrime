@@ -11,7 +11,7 @@ import { MainPage } from './main';
   declarations: [
     MainPage,
     CardComponent,
-    BigCardComponent
+    BigCardComponent,
   ],
   imports: [
     IonicPageModule.forChild(MainPage),
