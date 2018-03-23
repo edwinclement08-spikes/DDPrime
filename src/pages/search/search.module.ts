@@ -7,6 +7,7 @@ import { SearchPage } from './search';
 @NgModule({
   declarations: [
     SearchPage,
+    
   ],
   imports: [
     IonicPageModule.forChild(SearchPage),

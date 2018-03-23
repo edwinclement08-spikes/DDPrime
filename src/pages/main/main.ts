@@ -62,7 +62,9 @@ export class MainPage {
 
   }
 
-
+  showSearchPage()  {
+    this.navCtrl.push("SearchPage");
+  }
 
   showUserPage() {
 

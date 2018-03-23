@@ -4,22 +4,34 @@ page-main {
         src: url("assets/fonts/Louis George Cafe Bold.ttf") format("ttf");
         font-weight: 200
     }
+    
     ion-navbar {
         border: 0px !important;
         border-bottom-color: transparent !important;
         background-image: none !important;
         border-bottom: none !important;
+        button.menuButton  {
+            margin-left: 0px !important;
+            margin-right: 0px !important;
+        }
         ion-title {
             // transform: translateX(calc((#{$toolbar-md-height} - 12px)/2 ));
-            div {
-                align-self: center !important;
-                text-align: center;
+            div {   
+                // align-self: center !important;
+                // text-align: center;
                 font-family: LouisGeorgeCafeBold !important;
                 font: bold;
+                padding: 0px !important;
+            }
+        }
+        ion-buttons {
+            .searchButton span  {
+                font-size: 1.2em;
+                color: grey;
             }
         }
         .user-profile-img {
-            height: calc(#{$toolbar-md-height} - 12px);
+            height: calc(#{$toolbar-md-height} - 25px);
             border-radius: 50%;
         }
     }
