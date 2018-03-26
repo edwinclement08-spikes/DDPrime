@@ -26,7 +26,7 @@ export class BigCardComponent {
   }
   ngOnInit(){
     console.log('Hello BigCardComponent Component - ngOnInit');
-    console.log(this.data);
+    // console.log(this.data);
     
    
   }

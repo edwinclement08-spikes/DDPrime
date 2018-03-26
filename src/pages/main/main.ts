@@ -1,3 +1,4 @@
+import { Api } from './../../providers/api/api';
 import { ItemData } from './../../models/itemData';
 import { Component, Input } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -26,7 +27,7 @@ export class MainPage {
   bigCardDatas: ItemData[];
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public api: Api) {
     console.log('constructor MainPage');
     this.user = {
       img: "assets/img/photo-crop.jpeg"
@@ -78,6 +79,13 @@ export class MainPage {
 
         ])
     ]
+
+    let temp:any;
+    console.log();
+    
+    api.post("showDetails", "", {"itemcode": 2}).subscribe((err) =>   {
+        console.log(err);
+    })
 
   }
 

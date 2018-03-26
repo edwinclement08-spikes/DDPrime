@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
  */
 @Injectable()
 export class Api {
-  url: string = 'http://4ce9d6ed.ngrok.io';
+  url: string = 'http://7f0d7209.ngrok.io';
   protected headers: Headers;
   constructor(public http: HttpClient) {
   }

@@ -49,9 +49,9 @@ export class LoginPage {
       });
       toast.present();
     });
-    debugger;
+    // debugger;
     this.newRequest();
-    debugger;
+    // debugger;
   }
 
   newRequest() {
