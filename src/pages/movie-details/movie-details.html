@@ -43,15 +43,36 @@
     <div class="comment-box">
       <div>
         <span class="title">Comments</span>
-        <span class="addComment">Add Comment</span>
+        <span class="addComment" (click)="clickedAddComment()">{{showNewCommentSection ? "Hide":"Add Comment"}}</span>
       </div>
+      <div class="addComment_section" *ngIf="showNewCommentSection">
+        <div class="star-rating">
+          <span class="ratingBar fa " *ngFor="let a of [1,2,3,4,5]; index as i" [ngClass]="{ 'fa-star' : newComment.rating - i,
+                'fa-star-half-o' : newComment.rating == i+0.5,
+                'fa-star-o' : newComment.rating < i+1}" (click)="ratingStarClicked(i+1,newComment.rating == i+0.5 )">
+          </span>
+        </div>
+        <ion-item class="titleAddComment">
+          <!-- <ion-label color="primary"></ion-label> -->
+          <ion-input placeholder="Title"></ion-input>
+        </ion-item>
+
+        <ion-item class="descAddComment">
+          <ion-textarea placeholder="Enter comment"></ion-textarea>
+        </ion-item>
+
+        <ion-item>
+          <button ion-button class="submitButton">Submit</button>
+        </ion-item>
+      </div>
+
       <div *ngFor="let comment of data.comments" class="comment">
         <div class="title">{{comment.title}} </div>
         <div class="author">{{comment.author}}</div>
         <div class="star-rating">
           <span class="ratingBar fa " *ngFor="let a of [1,2,3,4,5]; index as i" [ngClass]="{ 'fa-star' : comment.rating - i,
             'fa-star-half-o' : comment.rating == i+0.5,
-            'fa-star-o' : comment.rating < i+1}">
+            'fa-star-o' : comment.rating < i+1}" >
           </span>
         </div>
         <hr> {{comment.description}}

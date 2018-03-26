@@ -10,7 +10,11 @@ export class ItemData {
     comments: any;
     // TODO add cost, icon
 
+    // TODO add an update ability
 
+    saveData()  {
+        // 
+    }
 
     constructor(title: string, releaseYear: number, duration: string, rating: number, imgUrl: string, genre: string, trailerUrl: string, description: string, comments: any) {
         this.title = title;

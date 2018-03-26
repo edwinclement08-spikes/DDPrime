@@ -1,5 +1,6 @@
+import { ItemData } from './../../models/itemData';
 import { MovieDetailsPage } from './../../pages/movie-details/movie-details';
-import { BigCardData } from './../../models/bigCard';
+// import { BigCardData } from './../../models/bigCard';
 import { Component, Input } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
@@ -16,7 +17,7 @@ import { NavController } from 'ionic-angular';
 export class BigCardComponent {
 
   text: string;
-  @Input() data: BigCardData;
+  @Input() data: ItemData;
   @Input() img: string;
  
   constructor(public navCtrl: NavController) {

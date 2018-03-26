@@ -20,8 +20,12 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 export class MovieDetailsPage {
   data: ItemData;
   message:string;
+
+  showNewCommentSection:boolean;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private sanitizer: DomSanitizer, private iab: InAppBrowser) {
     this.data = navParams.get('param1');
+    this.showNewCommentSection = false;
     // this.data.trailerUrl = sanitizer.bypassSecurityTrustResourceUrl(this.data.trailerUrl);
     // this.data.imgUrl = sanitizer.bypassSecurityTrustResourceUrl(this.data.imgUrl);
   }
@@ -38,5 +42,29 @@ export class MovieDetailsPage {
     this.message = "tfvj";
     // browser.close();
   }
+
+  clickedAddComment() {
+    if (this.showNewCommentSection)  {
+      this.showNewCommentSection = false;
+    } else {
+      this.showNewCommentSection =  true
+
+    }
+  }
+
+  newComment = {"title": "",
+  "rating": "",
+  "author": "",
+  "description":""};
+  
+
+  ratingStarClicked (i, half)  {
+    console.log(i);
+    console.log(half);
+
+    this.newComment.rating = i + (half ? -0.5:0);
+  }
+
+
 
 }

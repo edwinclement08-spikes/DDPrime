@@ -45,7 +45,30 @@ page-movie-details {
                     color: red;
                     vertical-align: middle;
                     float: right;
+
+                   
                 }
+            }
+            
+            .addComment_section {
+                margin:10px 0px;
+                border-radius: 10px;
+                border:thin grey dashed;
+                padding:13px;
+                ion-item {
+                    padding-left: 0px ;
+                }
+                .star-rating    {
+                    text-align:center;
+                    padding-bottom:5px;
+                }
+                .descAddComment ion-textarea {
+                    min-height: 20vh;
+                }
+                .submitButton   {
+                    background-color: $btn-bgColor;
+                }
+
             }
             div.comment {
                 border-radius: 5px;
