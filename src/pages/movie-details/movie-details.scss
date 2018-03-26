@@ -1,3 +1,76 @@
+$btn-bgColor: #9E9E9E;
 page-movie-details {
-
+    ion-content {
+        background-color: #eee;
+    }
+    .contentArea_movieDetails {
+        // border-radius: 5px;
+        // padding: 10px;
+        // border: thin #ccc solid;
+        img {
+            border-radius: 5px;
+            border: thin #eee solid;
+        }
+        .ratingBar {
+            font-size: 24px;
+            transform: translateY(3px);
+        }
+        .title {
+            color: red;
+            font-size: 24px;
+        }
+        .btn-addToWatchlist {
+            width: 48%;
+            background-color: $btn-bgColor;
+            margin: 10px 0px;
+        }
+        .btn-buy {
+            width: 48%;
+            background-color: $btn-bgColor;
+            margin: 10px 0px;
+        }
+        .genreYearDuration {
+            color: #a9a9ad;
+        }
+        .comment-box {
+            div {
+                line-height: 100%;
+                .title {
+                    color: black;
+                    vertical-align: middle;
+                    font-size: 22px;
+                }
+                .addComment {
+                    font-size: 13px;
+                    color: red;
+                    vertical-align: middle;
+                    float: right;
+                }
+            }
+            div.comment {
+                border-radius: 5px;
+                background-color: #ddd;
+                border: thin #ddd solid;
+                padding: 10px;
+                margin: 10px 0px;
+                .title {
+                    color: black;
+                    font-size: 18px;
+                    padding: 0px;
+                }
+                .author {
+                    padding: 0px;
+                    font-size: 15px;
+                    color: grey;
+                }
+                .star-rating {
+                    padding: 3px;
+                    .fa {
+                        color: gold;
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
 }

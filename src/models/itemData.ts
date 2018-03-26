@@ -1,18 +1,18 @@
-export class BigCardData {
+export class ItemData {
     title: string;
     releaseYear: number;
     duration: string;
     rating: number;
     imgUrl: any;
-    genre:string;
-    trailerUrl:any;
+    genre: string;
+    trailerUrl: any;
     description: any;
-    comments:any;
+    comments: any;
     // TODO add cost, icon
-    
-    
 
-    constructor(title: string, releaseYear: number, duration: string, rating: number, imgUrl: string, genre:string, trailerUrl:string, description:string, comments:any) {
+
+
+    constructor(title: string, releaseYear: number, duration: string, rating: number, imgUrl: string, genre: string, trailerUrl: string, description: string, comments: any) {
         this.title = title;
         this.releaseYear = releaseYear;
         this.duration = duration;

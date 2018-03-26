@@ -14,17 +14,50 @@
 
 
 <ion-content padding>
-<!-- {{this.data.trailerUrl}} -->
-    <!-- <div class="video-container">sdffsd
-        <iframe width="100%"  src="https://www.youtube.com/embed/POBI7OhGB18" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-      </div> -->
-
-  <span class="ratingBar fa " *ngFor="let a of [1,2,3,4,5]; index as i" [ngClass]="{ 'fa-star' : this.data.rating - i,
+  <div class="contentArea_movieDetails">
+    <img class="thumbnail" [src]="this.data.imgUrl" (click)="clickedPreview()" />
+    <button ion-button class="btn-addToWatchlist">
+      <div>
+        Add to Watchlist
+      </div>
+    </button>
+    <button ion-button class="btn-buy">
+      <div>
+        Buy
+      </div>
+    </button>
+    <div>
+      <span class="title">{{this.data.title}}</span>
+      <div style="text-align: center; float: right;">
+        <span class="ratingBar fa " *ngFor="let a of [1,2,3,4,5]; index as i" [ngClass]="{ 'fa-star' : this.data.rating - i,
       'fa-star-half-o' : this.data.rating == i+0.5,
       'fa-star-o' : this.data.rating < i+1}">
-  </span>
+        </span>
+      </div>
+    </div>
 
-  <div class="title">{{this.data.title}}</div>
-  <div class="genreYearDuration">{{this.data.genre}} ({{this.data.releaseYear}}, {{this.data.duration}})</div>
-  <img class="thumbnail" [src]="this.data.imgUrl" (click)="clickedPreview()"/>
+    <div class="genreYearDuration">{{this.data.genre}} ({{this.data.releaseYear}}, {{this.data.duration}})</div>
+    {{data.description}}
+
+    <hr>
+    <div class="comment-box">
+      <div>
+        <span class="title">Comments</span>
+        <span class="addComment">Add Comment</span>
+      </div>
+      <div *ngFor="let comment of data.comments" class="comment">
+        <div class="title">{{comment.title}} </div>
+        <div class="author">{{comment.author}}</div>
+        <div class="star-rating">
+          <span class="ratingBar fa " *ngFor="let a of [1,2,3,4,5]; index as i" [ngClass]="{ 'fa-star' : comment.rating - i,
+            'fa-star-half-o' : comment.rating == i+0.5,
+            'fa-star-o' : comment.rating < i+1}">
+          </span>
+        </div>
+        <hr> {{comment.description}}
+      </div>
+
+
+    </div>
+  </div>
 </ion-content>

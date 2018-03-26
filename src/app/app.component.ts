@@ -41,7 +41,9 @@ export class MyApp {
     { title: 'Timeline',  icon:"fa fa-hourglass",  component: 'TutorialPage' },
     { title: 'Settings',  icon:"fa fa-cogs ",  component: 'TutorialPage' },
     { title: 'Internet',  icon:"fa fa-chrome ",  component: 'TutorialPage' },
-
+    { title: 'Logout',  icon:"fa fa-arrow-square-left  ",  component: 'sfkjfs' },
+    // TODO Addlogout page or something.
+    
     // { title: 'Favourites', component: 'TutorialPage' },
     // { title: 'Tutorial', component: 'TutorialPage' },
     // { title: 'Welcome', component: 'WelcomePage' },

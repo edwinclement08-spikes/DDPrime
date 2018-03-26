@@ -88,4 +88,6 @@
     <allow-navigation href="http://192.168.0.133:8100" />
     <allow-navigation href="https://*youtube.com/*" />
     <plugin name="cordova-plugin-inappbrowser" spec="^2.0.2" />
+    <allow-navigation href="http://192.168.43.175:8101" />
+    <allow-navigation href="http://192.168.43.175:8100" />
 </widget>
