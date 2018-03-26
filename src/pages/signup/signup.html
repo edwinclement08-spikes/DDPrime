@@ -21,6 +21,15 @@
         <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>
       </ion-item>
 
+      <ion-item>
+        <ion-label fixed>{{'PHONE NO'| translate}}</ion-label>
+        <ion-input type="number" [(ngModel)]="account.phoneno" name="phoneno"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label fixed>{{'ADDRESS'| translate}}</ion-label>
+        <ion-textarea [(ngModel)]="account.address" name="address"></ion-textarea>
+      </ion-item>
       <!--
       Want to add a Username? Here you go:
 

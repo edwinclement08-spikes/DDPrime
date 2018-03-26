@@ -14,7 +14,7 @@ export class SignupPage {
   // The account fields for the login form.
   // If you're using the username field with or without email, make
   // sure to add it to the type
-  account: { name: string, email: string, password: string };
+  account: { name: string, email: string, password: string, phoneno:number,address:string };
 
   // Our translated text strings
   private signupErrorString: string;
@@ -26,7 +26,9 @@ export class SignupPage {
     this.account =   {
       name: 'Test Human',
       email: 'test@example.com',
-      password: 'test'
+      password: '',
+      phoneno: 990,
+      address: 'abc'
     };
     this.translateService.get('SIGNUP_ERROR').subscribe((value) => {
       this.signupErrorString = value;
@@ -38,6 +40,7 @@ export class SignupPage {
     // this.navCtrl.setRoot(MainPage);
     // return;
     console.log("Do signup")
+    // if (name&&email)
     this.user.signup(this.account).subscribe((resp) => {
       this.navCtrl.setRoot(MainPage);
     }, (err) => {
