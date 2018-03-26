@@ -14,7 +14,7 @@ export class SignupPage {
   // The account fields for the login form.
   // If you're using the username field with or without email, make
   // sure to add it to the type
-  account: { name: string, email: string, password: string, phoneno:number,address:string };
+  account: { name: string, email: string, password: string, phonenumber:number,address:string };
 
   // Our translated text strings
   private signupErrorString: string;
@@ -24,11 +24,11 @@ export class SignupPage {
     public toastCtrl: ToastController,
     public translateService: TranslateService) {
     this.account =   {
-      name: 'Test Human',
-      email: 'test@example.com',
-      password: '',
-      phoneno: 990,
-      address: 'abc'
+      name: null,
+      email: null,
+      password: null,
+      phonenumber: null,
+      address: null
     };
     this.translateService.get('SIGNUP_ERROR').subscribe((value) => {
       this.signupErrorString = value;
@@ -44,7 +44,6 @@ export class SignupPage {
     this.user.signup(this.account).subscribe((resp) => {
       this.navCtrl.setRoot(MainPage);
     }, (err) => {
-      this.navCtrl.setRoot(MainPage);
       // Unable to sign up
       let toast = this.toastCtrl.create({
         message: this.signupErrorString,
