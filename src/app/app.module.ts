@@ -11,6 +11,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 import { Items } from '../mocks/providers/items';
 import { Settings } from '../providers/providers';
@@ -65,6 +66,7 @@ export function provideSettings(storage: Storage) {
     MovieDetailsPage
   ],
   providers: [
+    InAppBrowser,
     Api,
     Items,
     User,
