@@ -83,7 +83,7 @@ export class MainPage {
     let temp:any;
     console.log();
     
-    api.post("showDetails", "", {"itemcode": 2}).subscribe((err) =>   {
+    api.post("showDetails", {"itemcode": "2"}).subscribe((err) =>   {
         console.log(err);
     })
 
