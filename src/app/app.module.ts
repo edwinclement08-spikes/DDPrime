@@ -1,3 +1,4 @@
+import { SearchPage } from './../pages/search/search';
 import { MovieDetailsPage } from './../pages/movie-details/movie-details';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -45,7 +46,8 @@ export function provideSettings(storage: Storage) {
 @NgModule({
   declarations: [
     MyApp,
-    MovieDetailsPage
+    MovieDetailsPage,
+    SearchPage
   ],
   imports: [
     BrowserModule,
@@ -63,7 +65,8 @@ export function provideSettings(storage: Storage) {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    MovieDetailsPage
+    MovieDetailsPage,
+    SearchPage
   ],
   providers: [
     InAppBrowser,
