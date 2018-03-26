@@ -41,7 +41,6 @@ export class User {
       if (res.status == 'success') {
         this._loggedIn(res);
         console.log(res);
-        debugger;
       } else {
       }
     }, err => {
@@ -58,6 +57,21 @@ export class User {
   signup(accountInfo: any) {
     let seq = this.api.post('signup', accountInfo).share();
 
+    seq.subscribe((res: any) => {
+      // If the API returned a successful response, mark the user as logged in
+      if (res.status == 'success') {
+        this._loggedIn(res);
+      }
+    }, err => {
+      console.error('ERROR', err);
+    });
+
+    return seq;
+  }
+
+  newRoute(accountInfo: any)
+  {
+    let seq = this.api.post('addToWishList', accountInfo).share();
     seq.subscribe((res: any) => {
       // If the API returned a successful response, mark the user as logged in
       if (res.status == 'success') {
