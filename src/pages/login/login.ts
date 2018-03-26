@@ -16,8 +16,8 @@ export class LoginPage {
   // If you're using the username field with or without email, make
   // sure to add it to the type
   account: { email: string, password: string } = {
-    email: 'test@example.com',
-    password: 'test'
+    email: null,
+    password: null
   };
 
   // Our translated text strings
@@ -38,6 +38,25 @@ export class LoginPage {
     // this.navCtrl.push(MainPage);
     // return;
     this.user.login(this.account).subscribe((resp) => {
+      console.log(resp)
+    }, (err) => {
+      console.log(err)
+      // Unable to log in
+      let toast = this.toastCtrl.create({
+        message: this.loginErrorString,
+        duration: 3000,
+        position: 'top'
+      });
+      toast.present();
+    });
+    debugger;
+    this.newRequest();
+    debugger;
+  }
+
+  newRequest() {
+    console.log("Hitting the Url")
+    this.user.newRoute(this.account).subscribe((resp) => {
       this.navCtrl.push(MainPage);
     }, (err) => {
       this.navCtrl.push(MainPage);
