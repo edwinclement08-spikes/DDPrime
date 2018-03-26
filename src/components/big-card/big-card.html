@@ -1,5 +1,5 @@
 <!-- Generated template for the BigCardComponent component -->
-<div class="outerMostBigCard">
+<div class="outerMostBigCard" (click)="openMovieDetailsPage()">
 
   <span class="ratingBar fa " *ngFor="let a of [1,2,3,4,5]; index as i" [ngClass]="{ 'fa-star' : data.rating - i,
       'fa-star-half-o' : data.rating == i+0.5,

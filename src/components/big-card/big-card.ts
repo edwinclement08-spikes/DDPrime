@@ -1,5 +1,7 @@
+import { MovieDetailsPage } from './../../pages/movie-details/movie-details';
 import { BigCardData } from './../../models/bigCard';
 import { Component, Input } from '@angular/core';
+import { NavController } from 'ionic-angular';
 
 /**
  * Generated class for the BigCardComponent component.
@@ -17,18 +19,22 @@ export class BigCardComponent {
   @Input() data: BigCardData;
   @Input() img: string;
  
-  constructor() {
+  constructor(public navCtrl: NavController) {
     console.log('Hello BigCardComponent Component - constuctor');
-    
-
 
   }
   ngOnInit(){
     console.log('Hello BigCardComponent Component - ngOnInit');
     console.log(this.data);
     
-    
+   
+  }
+
+  openMovieDetailsPage()  {
  
+    this.navCtrl.push(MovieDetailsPage, {
+      param1: this.data,
+  });
   }
   
 }

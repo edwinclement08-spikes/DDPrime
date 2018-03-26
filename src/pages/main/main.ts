@@ -49,9 +49,10 @@ export class MainPage {
       "assets/img/movies/big/Mockingjay.jpg",
       "assets/img/movies/big/horns.jpg",
       "assets/img/movies/big/movie-guide-march.jpg"];
-      
+
     this.bigCardDatas = [
-      new BigCardData("Fantastic Four", 2014, "2:12", 4.5, "assets/img/movies/big/fantastic_four.jpg", "Action")
+      new BigCardData("Fantastic Four", 2014, "2:12", 4.5, "assets/img/movies/big/fantastic_four.jpg",
+        "Action", "https://www.youtube.com/watch?v=POBI7OhGB18")
     ]
 
   }
@@ -62,7 +63,9 @@ export class MainPage {
 
   }
 
-  showSearchPage()  {
+  showSearchPage() {
+    console.log("sfjh");
+
     this.navCtrl.push("SearchPage");
   }
 

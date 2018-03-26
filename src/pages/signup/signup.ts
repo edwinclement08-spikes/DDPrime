@@ -39,7 +39,7 @@ export class SignupPage {
     // return;
     console.log("Do signup")
     this.user.signup(this.account).subscribe((resp) => {
-      // this.navCtrl.setRoot(MainPage);
+      this.navCtrl.setRoot(MainPage);
     }, (err) => {
       this.navCtrl.setRoot(MainPage);
       // Unable to sign up

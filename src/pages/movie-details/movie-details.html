@@ -1,0 +1,30 @@
+<!--
+  Generated template for the MovieDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{this.data.title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+{{this.data.trailerUrl}}
+    <div class="video-container">
+        <iframe [src]="this.data.trailerUrl" frameborder="0" width="98%" height="315"></iframe>
+      </div>
+
+  <span class="ratingBar fa " *ngFor="let a of [1,2,3,4,5]; index as i" [ngClass]="{ 'fa-star' : this.data.rating - i,
+      'fa-star-half-o' : this.data.rating == i+0.5,
+      'fa-star-o' : this.data.rating < i+1}">
+  </span>
+
+  <div class="title">{{this.data.title}}</div>
+  <div class="genreYearDuration">{{this.data.genre}} ({{this.data.releaseYear}}, {{this.data.duration}})</div>
+  <img class="thumbnail" [src]="this.data.imgUrl" />
+</ion-content>
