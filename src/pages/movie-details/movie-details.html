@@ -14,10 +14,10 @@
 
 
 <ion-content padding>
-{{this.data.trailerUrl}}
-    <div class="video-container">
-        <iframe [src]="this.data.trailerUrl" frameborder="0" width="98%" height="315"></iframe>
-      </div>
+<!-- {{this.data.trailerUrl}} -->
+    <!-- <div class="video-container">sdffsd
+        <iframe width="100%"  src="https://www.youtube.com/embed/POBI7OhGB18" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div> -->
 
   <span class="ratingBar fa " *ngFor="let a of [1,2,3,4,5]; index as i" [ngClass]="{ 'fa-star' : this.data.rating - i,
       'fa-star-half-o' : this.data.rating == i+0.5,
@@ -26,5 +26,5 @@
 
   <div class="title">{{this.data.title}}</div>
   <div class="genreYearDuration">{{this.data.genre}} ({{this.data.releaseYear}}, {{this.data.duration}})</div>
-  <img class="thumbnail" [src]="this.data.imgUrl" />
+  <img class="thumbnail" [src]="this.data.imgUrl" (click)="clickedPreview()"/>
 </ion-content>

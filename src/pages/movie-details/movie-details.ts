@@ -2,6 +2,7 @@ import { BigCardData } from './../../models/bigCard';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DomSanitizer } from '@angular/platform-browser';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 /**
  * Generated class for the MovieDetailsPage page.
@@ -18,15 +19,22 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class MovieDetailsPage {
   data: BigCardData;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private sanitizer: DomSanitizer) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private sanitizer: DomSanitizer, private iab: InAppBrowser) {
     this.data = navParams.get('param1');
-    this.data.trailerUrl = sanitizer.bypassSecurityTrustResourceUrl(this.data.trailerUrl);
-    this.data.imgUrl = sanitizer.bypassSecurityTrustResourceUrl(this.data.imgUrl);
+    // this.data.trailerUrl = sanitizer.bypassSecurityTrustResourceUrl(this.data.trailerUrl);
+    // this.data.imgUrl = sanitizer.bypassSecurityTrustResourceUrl(this.data.imgUrl);
   }
 
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MovieDetailsPage');
+    
+  }
+
+  clickedPreview()  {
+    const browser = this.iab.create(this.data.trailerUrl);
+    
+
   }
 
 }
