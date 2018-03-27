@@ -41,13 +41,15 @@ export class SignupPage {
     // this.navCtrl.setRoot(MainPage);
     // return;
     var account = this.account;
+    console.log(this.account)
+    
     console.log("Do signup")
-    if (account.name && this.validateEmail(account.email) && this.validatePassword(account.password) && this.validatePhone(this.checkPhoneFormat(account.phonenumber)) && account.address && account.address.length > 10
-  && account.password===this.passwordRetyped)
+    if (account.name && this.validateEmail(account.email) && account.phonenumber && this.validatePhone(this.checkPhoneFormat(account.phonenumber)) && account.address && this.matchPassword()  && this.validatePassword(account.password))
       this.user.signup(this.account).subscribe((resp) => {
         this.navCtrl.setRoot(MainPage);
       }, (err) => {
         // Unable to sign up
+        this.signupErrorString = "Connection Error, Please try again later";
         let toast = this.toastCtrl.create({
           message: this.signupErrorString,
           duration: 3000,
@@ -56,6 +58,7 @@ export class SignupPage {
         toast.present();
       });
     else {
+      this.signupErrorString = "Please enter correct credentials";
       let toast = this.toastCtrl.create({
         message: this.signupErrorString,
         duration: 3000,
@@ -68,20 +71,38 @@ export class SignupPage {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     var test = re.test(String(email).toLowerCase());
     if (!test)
+    {
+      console.log("Failed at email regex");
       this.signupErrorString = "Please enter a valid email id"
+    }
+    else {
+      console.log("Email Correct");
+    }
     return test;
   }
+
   validatePassword(password) {
     var minNumberofChars = 6;
     var maxNumberofChars = 16;
     var regularExpression = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+    var test = regularExpression.test(password)
     if (password.length < minNumberofChars || password.length > maxNumberofChars) {
       return false;
     }
-    if (!regularExpression.test(password)) {
+    if (!test) {
       this.signupErrorString = "Password should have atleast one number,one special character and 6 to 16 characters long"
+    }
+    return test;
+  }
+  matchPassword()
+  {
+    if (! (this.account.password===this.passwordRetyped))
+    {
+      this.signupErrorString = "Passwords should match"   
+      console.log("Passwords not matching")
       return false;
     }
+    return true;
   }
   checkPhoneFormat(phone){
     /* If phone no starts with a 0 and it is of 11 digits then remove the 0
@@ -109,7 +130,12 @@ export class SignupPage {
     var re = /^[789][0-9]{9}$/;
     var test = re.test(phone);
     if (!test)
+    {
+      console.log("Failed at mobile auth")
       this.signupErrorString = "Please enter a valid phone number"
+    }else{
+      console.log("Phone Wrong");
+    }
     return test;
   }
 }
