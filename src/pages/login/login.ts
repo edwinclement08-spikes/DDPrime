@@ -38,19 +38,30 @@ export class LoginPage {
     // this.navCtrl.push(MainPage);
     // return;
     this.user.login(this.account).subscribe((resp) => {
-      console.log(resp)
+      console.log("HTTP response "+JSON.stringify(resp));
+      if (resp.status==="success")
+        this.navCtrl.push(MainPage);
+      else
+      {
+        let toast = this.toastCtrl.create({
+          message: this.loginErrorString,
+          duration: 3000,
+          position: 'bottom'
+        });
+        toast.present();  
+      }
     }, (err) => {
       console.log(err)
       // Unable to log in
       let toast = this.toastCtrl.create({
         message: this.loginErrorString,
         duration: 3000,
-        position: 'top'
+        position: 'bottom'
       });
       toast.present();
     });
     // debugger;
-    this.newRequest();
+    // this.newRequest();
     // debugger;
   }
 

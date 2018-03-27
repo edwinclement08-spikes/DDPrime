@@ -20,6 +20,7 @@ import { User } from '../providers/providers';
 import { Api } from '../providers/providers';
 import { MyApp } from './app.component';
 import { ListItemsProvider } from '../providers/list-items/list-items';
+import { ValidationProvider } from '../providers/validation/validation';
 
 
 // The translate loader needs to know where to load i18n files
@@ -81,7 +82,8 @@ export function provideSettings(storage: Storage) {
     { provide: Settings, useFactory: provideSettings, deps: [Storage] },
     // Keep this to enable Ionic's runtime error handling during development
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    ListItemsProvider
+    ListItemsProvider,
+    ValidationProvider
   ]
 })
 export class AppModule { }

@@ -15,16 +15,16 @@ export class ItemData {
     saveData()  {
         // 
     }
-
-    constructor(title: string, releaseYear: number, duration: string, rating: number, imgUrl: string, genre: string, trailerUrl: string, description: string, comments: any) {
-        this.title = title;
-        this.releaseYear = releaseYear;
-        this.duration = duration;
-        this.rating = rating;
-        this.imgUrl = imgUrl;
-        this.genre = genre;
-        this.trailerUrl = trailerUrl;
-        this.description = description;
-        this.comments = comments;
+    // title: string, releaseYear: number, duration: string, rating: number, imgUrl: string, genre: string, trailerUrl: string, description: string, comments: any
+    constructor(data) {
+        this.title = data.title;
+        this.releaseYear = data.releaseYear;
+        this.duration = data.duration;
+        this.rating = data.rating;
+        this.imgUrl = data.imgUrl;
+        this.genre = data.genre;
+        this.trailerUrl = data.trailerUrl;
+        this.description = data.description;
+        this.comments = data.comments;
     }
 }

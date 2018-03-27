@@ -15,7 +15,7 @@ export class SignupPage {
   // If you're using the username field with or without email, make
   // sure to add it to the type
   account: { name: string, email: string, password: string, phonenumber: number, address: string };
-  passwordRetyped:string;
+  passwordRetyped: string;
   // Our translated text strings
   private signupErrorString: string;
 
@@ -24,11 +24,11 @@ export class SignupPage {
     public toastCtrl: ToastController,
     public translateService: TranslateService) {
     this.account = {
-      name: null,
-      email: null,
-      password: null,
-      phonenumber: null,
-      address: null
+      name: "Joshua Noronha",
+      email: "ruttajosh@gmail.com",
+      password: "joshua@123",
+      phonenumber: 9833319513,
+      address: "null"
     };
     this.signupErrorString = "Sign Up Error, Please try again later";
     this.translateService.get('SIGNUP_ERROR').subscribe((value) => {
@@ -42,11 +42,22 @@ export class SignupPage {
     // return;
     var account = this.account;
     console.log(this.account)
-    
+
     console.log("Do signup")
-    if (account.name && this.validateEmail(account.email) && account.phonenumber && this.validatePhone(this.checkPhoneFormat(account.phonenumber)) && account.address && this.matchPassword()  && this.validatePassword(account.password))
+    if (account.name && this.validateEmail(account.email) && account.phonenumber && this.validatePhone(this.checkPhoneFormat(account.phonenumber)) && account.address && this.matchPassword() && this.validatePassword(account.password))
       this.user.signup(this.account).subscribe((resp) => {
-        this.navCtrl.setRoot(MainPage);
+        if (resp.status === "success")
+          this.navCtrl.setRoot(MainPage);
+        else {
+          console.log(JSON.stringify(resp.message))
+          this.signupErrorString = resp.message;
+          let toast = this.toastCtrl.create({
+            message: this.signupErrorString,
+            duration: 3000,
+            position: 'bottom'
+          });
+          toast.present();
+        }
       }, (err) => {
         // Unable to sign up
         this.signupErrorString = "Connection Error, Please try again later";
@@ -70,8 +81,7 @@ export class SignupPage {
   validateEmail(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     var test = re.test(String(email).toLowerCase());
-    if (!test)
-    {
+    if (!test) {
       console.log("Failed at email regex");
       this.signupErrorString = "Please enter a valid email id"
     }
@@ -82,9 +92,9 @@ export class SignupPage {
   }
 
   validatePassword(password) {
-    var minNumberofChars = 6;
+    var minNumberofChars = 3;
     var maxNumberofChars = 16;
-    var regularExpression = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+    var regularExpression = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{3,16}$/;
     var test = regularExpression.test(password)
     if (password.length < minNumberofChars || password.length > maxNumberofChars) {
       return false;
@@ -94,31 +104,29 @@ export class SignupPage {
     }
     return test;
   }
-  matchPassword()
-  {
-    if (! (this.account.password===this.passwordRetyped))
-    {
-      this.signupErrorString = "Passwords should match"   
+  matchPassword() {
+    if (!(this.account.password === this.passwordRetyped)) {
+      this.signupErrorString = "Passwords should match"
       console.log("Passwords not matching")
       return false;
     }
     return true;
   }
-  checkPhoneFormat(phone){
+  checkPhoneFormat(phone) {
     /* If phone no starts with a 0 and it is of 11 digits then remove the 0
       eg - 09833319513 becomes 9833319513
-    */ 
-    if (phone[0]==="0"&&phone.length===11)
-        return phone.slice(1);
+    */
+    if (phone[0] === "0" && phone.length === 11)
+      return phone.slice(1);
     /* If phone no starts with a 91 and it is of 12 digits then remove the 91
       eg - 919833319513 becomes 9833319513
-    */ 
-    else if (phone[0]==="9"&&phone[1]==="1"&&phone.length===12)
+    */
+    else if (phone[0] === "9" && phone[1] === "1" && phone.length === 12)
       return phone.slice(2);
     /* If phone no starts with a +91 and it is of 11 digits then remove the +91
       eg - +91833319513 becomes 9833319513
-    */ 
-    else if (phone[0]==="+"&&phone[0]==="9"&&phone[1]==="1"&&phone.length===13)
+    */
+    else if (phone[0] === "+" && phone[0] === "9" && phone[1] === "1" && phone.length === 13)
       return phone.slice(3);
     else
       return phone;
@@ -129,11 +137,10 @@ export class SignupPage {
     */
     var re = /^[789][0-9]{9}$/;
     var test = re.test(phone);
-    if (!test)
-    {
+    if (!test) {
       console.log("Failed at mobile auth")
       this.signupErrorString = "Please enter a valid phone number"
-    }else{
+    } else {
       console.log("Phone Wrong");
     }
     return test;
