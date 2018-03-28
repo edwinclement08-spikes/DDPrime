@@ -43,6 +43,7 @@ export class LoginPage {
         this.navCtrl.push(MainPage);
       else
       {
+        this.loginErrorString = "Invaild email id or password"
         let toast = this.toastCtrl.create({
           message: this.loginErrorString,
           duration: 3000,
@@ -53,6 +54,7 @@ export class LoginPage {
     }, (err) => {
       console.log(err)
       // Unable to log in
+      this.loginErrorString = "Unable to connect to server, please try again later"
       let toast = this.toastCtrl.create({
         message: this.loginErrorString,
         duration: 3000,

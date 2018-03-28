@@ -1,3 +1,4 @@
+import { UserPage } from './../pages/user/user';
 import { SearchPage } from './../pages/search/search';
 import { MovieDetailsPage } from './../pages/movie-details/movie-details';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -48,7 +49,8 @@ export function provideSettings(storage: Storage) {
   declarations: [
     MyApp,
     MovieDetailsPage,
-    SearchPage
+    SearchPage,
+    UserPage
   ],
   imports: [
     BrowserModule,
@@ -67,7 +69,8 @@ export function provideSettings(storage: Storage) {
   entryComponents: [
     MyApp,
     MovieDetailsPage,
-    SearchPage
+    SearchPage,
+    UserPage
   ],
   providers: [
     InAppBrowser,

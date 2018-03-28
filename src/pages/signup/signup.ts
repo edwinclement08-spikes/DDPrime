@@ -41,16 +41,19 @@ export class SignupPage {
     // this.navCtrl.setRoot(MainPage);
     // return;
     var account = this.account;
-    console.log(this.account)
+    console.log(this.account);
 
     console.log("Do signup")
     if (account.name && this.validateEmail(account.email) && account.phonenumber && this.validatePhone(this.checkPhoneFormat(account.phonenumber)) && account.address && this.matchPassword() && this.validatePassword(account.password))
       this.user.signup(this.account).subscribe((resp) => {
-        if (resp.status === "success")
-          this.navCtrl.setRoot(MainPage);
+        if (resp)
+          if (resp.status === "success")
+            this.navCtrl.setRoot(MainPage);
         else {
-          console.log(JSON.stringify(resp.message))
-          this.signupErrorString = resp.message;
+          if (resp) {
+            console.log(JSON.stringify(resp.message))
+            this.signupErrorString = resp.message;
+          }
           let toast = this.toastCtrl.create({
             message: this.signupErrorString,
             duration: 3000,
