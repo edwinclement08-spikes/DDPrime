@@ -35,36 +35,35 @@ export class LoginPage {
 
   // Attempt to login in through our User service
   doLogin() {
-    // this.navCtrl.push(MainPage);
-    // return;
-    this.user.login(this.account).subscribe((resp) => {
-      console.log("HTTP response "+JSON.stringify(resp));
-      if (resp.status==="success")
-        this.navCtrl.push(MainPage);
-      else
-      {
-        this.loginErrorString = "Invaild email id or password"
-        let toast = this.toastCtrl.create({
-          message: this.loginErrorString,
-          duration: 3000,
-          position: 'bottom'
-        });
-        toast.present();  
-      }
-    }, (err) => {
-      console.log(err)
-      // Unable to log in
-      this.loginErrorString = "Unable to connect to server, please try again later"
-      let toast = this.toastCtrl.create({
-        message: this.loginErrorString,
-        duration: 3000,
-        position: 'bottom'
-      });
-      toast.present();
-    });
-    // debugger;
-    // this.newRequest();
-    // debugger;
+    this.navCtrl.setRoot(MainPage);
+    return;
+    // this.user.login(this.account).subscribe((resp:any) => {
+    //   console.log("HTTP response " + JSON.stringify(resp));
+    //   if (resp) {
+
+    //     if (resp.status === "success")
+    //       this.navCtrl.setRoot(MainPage);
+    //     else {
+    //       this.loginErrorString = "Invaild email id or password"
+    //       let toast = this.toastCtrl.create({
+    //         message: this.loginErrorString,
+    //         duration: 3000,
+    //         position: 'bottom'
+    //       });
+    //       toast.present();
+    //     }
+    //   }
+    // }, (err) => {
+    //   console.log(err)
+    //   // Unable to log in
+    //   this.loginErrorString = "Unable to connect to server, please try again later"
+    //   let toast = this.toastCtrl.create({
+    //     message: this.loginErrorString,
+    //     duration: 3000,
+    //     position: 'bottom'
+    //   });
+    //   toast.present();
+    // });
   }
 
   newRequest() {

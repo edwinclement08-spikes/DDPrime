@@ -45,7 +45,7 @@ export class SignupPage {
 
     console.log("Do signup")
     if (account.name && this.validateEmail(account.email) && account.phonenumber && this.validatePhone(this.checkPhoneFormat(account.phonenumber)) && account.address && this.matchPassword() && this.validatePassword(account.password))
-      this.user.signup(this.account).subscribe((resp) => {
+      this.user.signup(this.account).subscribe((resp:any) => {
         if (resp)
           if (resp.status === "success")
             this.navCtrl.setRoot(MainPage);
