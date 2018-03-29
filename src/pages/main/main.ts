@@ -71,7 +71,7 @@ export class MainPage {
 
     this.userProvider.getToken().then(
       (data) => {
-        this.api.post("showDetails", { "itemcode": "2" }, data)
+        this.api.post("showDetails", { "itemcode": "10" }, data)
         .subscribe((data) => {
             console.log(JSON.stringify(data));
 

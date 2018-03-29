@@ -8,7 +8,7 @@ import { Storage } from '@ionic/storage';
  */
 @Injectable()
 export class Api {
-  url: string = 'http://fe970ad2.ngrok.io';
+  url: string = 'http://139.59.58.64:8080';
   protected headers: Headers;
   constructor(public http: HttpClient) {
   }
