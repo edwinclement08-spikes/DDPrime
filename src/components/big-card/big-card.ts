@@ -3,6 +3,7 @@ import { MovieDetailsPage } from './../../pages/movie-details/movie-details';
 // import { BigCardData } from './../../models/bigCard';
 import { Component, Input } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { Api } from '../../providers/providers';
 
 /**
  * Generated class for the BigCardComponent component.
@@ -19,8 +20,8 @@ export class BigCardComponent {
   text: string;
   @Input() data: ItemData;
   @Input() img: string;
- 
-  constructor(public navCtrl: NavController) {
+
+  constructor(public navCtrl: NavController, public api:Api) {
     console.log('Hello BigCardComponent Component - constuctor');
 
   }

@@ -1,5 +1,6 @@
-import { HttpClient, HttpParams , HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Storage } from '@ionic/storage';
 
 
 /**
@@ -30,21 +31,28 @@ export class Api {
     return this.http.get(this.url + '/' + endpoint, reqOpts);
   }
 
-  post(endpoint: string, body: any, reqOpts?: any) {
-      // this.headers = new Headers();
-      // this.headers.append('Content-Type', 'application/json')
-      //   this.headers.append('Accept', 'application/json');
-      reqOpts = {
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        params: new HttpParams()
-      };
-    console.log("Post req initiated endppint"+endpoint)
-    console.log("Post body: "+ JSON.stringify(body));
-    console.log("Req Opts: "+JSON.stringify(reqOpts));
+  post(endpoint: string, body: any, token?: any) {
+    // this.headers = new Headers();
+    // this.headers.append('Content-Type', 'application/json')
+    //   this.headers.append('Accept', 'application/json');
+    let reqOpts = {
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      params: new HttpParams()
+    };
+
+    if(token) {
+      console.log("There is a token");
+      reqOpts.headers["x-access-token"] = token;      
+    } else {
+      console.log("no token");
+    }
+    console.log("Post req initiated endppint" + endpoint)
+    console.log("Post body: " + JSON.stringify(body));
+    console.log("Req Opts: " + JSON.stringify(reqOpts));
     return this.http.post(this.url + '/' + endpoint, JSON.stringify(body), reqOpts);
-  } 
+  }
 
   put(endpoint: string, body: any, reqOpts?: any) {
     return this.http.put(this.url + '/' + endpoint, body, reqOpts);

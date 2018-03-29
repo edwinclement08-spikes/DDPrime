@@ -3,6 +3,7 @@ import { UserPage } from './../user/user';
 import { Api } from './../../providers/api/api';
 import { ItemData } from './../../models/itemData';
 import { Component, Input } from '@angular/core';
+import { Storage } from '@ionic/storage';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SearchPage } from '../search/search';
 import { BigCardData } from '../../models/bigCard';
@@ -25,14 +26,14 @@ export class MainPage {
 
   images: any;
   bigImages: any;
-  data:any;
+  data: any;
   bigCardDatas: ItemData[];
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public api: Api, public userProvider :User) {
+  constructor(public navCtrl: NavController, private storage: Storage, public navParams: NavParams, public api: Api, public userProvider: User) {
     console.log('constructor MainPage');
     this.userProvider = userProvider;
-    
+
     this.api = api;
     this.user = {
       img: "assets/img/photo-crop.jpeg"
@@ -59,30 +60,31 @@ export class MainPage {
       "assets/img/movies/big/horns.jpg",
       "assets/img/movies/big/movie-guide-march.jpg"];
 
-    
-      
-
-    let temp:any;
+    let temp: any;
     console.log();
-    
-    
 
   }
-  
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MainPage');
-    this.api.post("showDetails", {"itemcode": "2"}).subscribe((data) =>   {
-      console.log(JSON.stringify(data));
-      
-      this.data = data
-      // debugger;
-      this.bigCardDatas = [
-        new ItemData(data)
-      ]
-      console.log(data)
-      // debugger;
-    });
+
+    this.userProvider.getToken().then(
+      (data) => {
+        this.api.post("showDetails", { "itemcode": "2" }, data)
+        .subscribe((data) => {
+            console.log(JSON.stringify(data));
+
+            this.data = data
+            // debugger;
+            this.bigCardDatas = [
+              new ItemData(data)
+            ]
+            console.log(data)
+            // debugger;
+          });
+      }
+    ).catch((err) => (console.log(err)));
 
   }
 
@@ -95,5 +97,5 @@ export class MainPage {
   showUserPage() {
     this.navCtrl.push(UserPage);
   }
-  
+
 }

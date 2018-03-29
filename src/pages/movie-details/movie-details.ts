@@ -1,3 +1,4 @@
+import { Api } from './../../providers/api/api';
 import { ItemData } from './../../models/itemData';
 // import { BigCardData } from './../../models/bigCard';
 import { Component } from '@angular/core';
@@ -19,11 +20,12 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 })
 export class MovieDetailsPage {
   data: ItemData;
-  message:string;
+  message: string;
 
-  showNewCommentSection:boolean;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private sanitizer: DomSanitizer, private iab: InAppBrowser) {
+  showNewCommentSection: boolean;
+
+  constructor(public api: Api, public navCtrl: NavController, public navParams: NavParams, private sanitizer: DomSanitizer, private iab: InAppBrowser) {
     this.data = navParams.get('param1');
     this.showNewCommentSection = false;
     // this.data.trailerUrl = sanitizer.bypassSecurityTrustResourceUrl(this.data.trailerUrl);
@@ -33,36 +35,35 @@ export class MovieDetailsPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MovieDetailsPage');
-    
   }
 
-  clickedPreview()  {
+  clickedPreview() {
     console.log("fess");
     const browser = this.iab.create(this.data.trailerUrl);
     this.message = "tfvj";
-    // browser.close();
   }
 
   clickedAddComment() {
-    if (this.showNewCommentSection)  {
+    if (this.showNewCommentSection) {
       this.showNewCommentSection = false;
     } else {
-      this.showNewCommentSection =  true
-
+      this.showNewCommentSection = true
     }
   }
 
-  newComment = {"title": "",
-  "rating": "",
-  "author": "",
-  "description":""};
-  
+  newComment = {
+    "title": "",
+    "rating": "",
+    "author": "",
+    "description": ""
+  };
 
-  ratingStarClicked (i, half)  {
+
+  ratingStarClicked(i, half) {
     console.log(i);
     console.log(half);
 
-    this.newComment.rating = i + (half ? -0.5:0);
+    this.newComment.rating = i + (half ? -0.5 : 0);
   }
 
 

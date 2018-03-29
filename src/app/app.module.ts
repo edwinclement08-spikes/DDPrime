@@ -7,14 +7,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { Camera } from '@ionic-native/camera';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { Push } from '@ionic-native/push'
 import { IonicStorageModule, Storage } from '@ionic/storage';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
-
 import { Items } from '../mocks/providers/items';
 import { Settings } from '../providers/providers';
 import { User } from '../providers/providers';
@@ -75,6 +74,7 @@ export function provideSettings(storage: Storage) {
   providers: [
     InAppBrowser,
     Api,
+    Push,
     Items,
     User,
     Camera,

@@ -4,6 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { IonicPage, NavController, ToastController } from 'ionic-angular';
 import { User } from '../../providers/providers';
 import { MainPage } from '../pages';
+import { Storage } from '@ionic/storage/dist/storage';
 
 @IonicPage()
 @Component({
@@ -24,6 +25,7 @@ export class LoginPage {
 
   constructor(public navCtrl: NavController,
     public user: User,
+    private storage: Storage,
     public toastCtrl: ToastController,
     public translateService: TranslateService) {
 
@@ -36,6 +38,11 @@ export class LoginPage {
   doLogin() {
     // this.navCtrl.setRoot(MainPage);
     // return;
+
+    this.storage.set('name', 'Max');
+    this.storage.get('age').then((val) => {
+      console.log('Your age is', val);
+    });
     this.user.login(this.account).subscribe((resp:any) => {
       console.log("HTTP response " + JSON.stringify(resp));
       if (resp) {
@@ -52,11 +59,13 @@ export class LoginPage {
             position: 'bottom'
           });
           toast.present();
+          this.navCtrl.setRoot(MainPage);
         }
       }
     }, (err) => {
       console.log(err)
       // Unable to log in
+      this.navCtrl.setRoot(MainPage);
       this.loginErrorString = "Unable to connect to server, please try again later"
       let toast = this.toastCtrl.create({
         message: this.loginErrorString,
