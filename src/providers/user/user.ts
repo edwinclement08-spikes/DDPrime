@@ -27,7 +27,10 @@ import { Api } from '../api/api';
 export class User {
   _user: any;
 
-  constructor(public api: Api) { }
+  constructor(public api: Api) {
+    this._user = null;
+
+  }
 
   /**
    * Send a POST request to our login endpoint with the data
@@ -65,15 +68,14 @@ export class User {
     }, err => {
       console.error('ERROR', err);
     });
-
     return seq;
   }
 
-  newRoute(accountInfo: any)
-  {
+  newRoute(accountInfo: any) {
     let seq = this.api.post('addToWishList', accountInfo).share();
     seq.subscribe((res: any) => {
       // If the API returned a successful response, mark the user as logged in
+      console.log(res);
       if (res.status == 'success') {
         this._loggedIn(res);
       }
@@ -96,5 +98,9 @@ export class User {
    */
   _loggedIn(resp) {
     this._user = resp.user;
+  }
+
+  getCurrentUser() {
+    return this._user;
   }
 }

@@ -1,3 +1,4 @@
+import { User } from './../../providers/user/user';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -19,11 +20,11 @@ export class UserPage {
     phonenumber:9833319513,
     address:"BARC"
   }
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public userProvider: User) {
+    console.log("user page started");
+    console.log(userProvider.getCurrentUser());
   } 
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad UserPage');
   }
-
 }

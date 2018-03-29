@@ -21,7 +21,7 @@ export class ItemData {
         this.releaseYear = data.releaseYear;
         this.duration = data.duration;
         this.rating = data.rating;
-        this.imgUrl = data.imgUrl;
+        this.imgUrl = data.icon;
         this.genre = data.genre;
         this.trailerUrl = data.trailerUrl;
         this.description = data.description;

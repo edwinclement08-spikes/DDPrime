@@ -1,3 +1,4 @@
+import { User } from './../../providers/user/user';
 import { UserPage } from './../user/user';
 import { Api } from './../../providers/api/api';
 import { ItemData } from './../../models/itemData';
@@ -28,19 +29,11 @@ export class MainPage {
   bigCardDatas: ItemData[];
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public api: Api) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public api: Api, public userProvider :User) {
     console.log('constructor MainPage');
-    api.post("showDetails", {"itemcode": "2"}).subscribe((data) =>   {
-      JSON.stringify(data);
-      this.data = data
-      debugger;
-      this.bigCardDatas = [
-        new ItemData(data)
-      ]
-      debugger;
-    });
-
-
+    this.userProvider = userProvider;
+    
+    this.api = api;
     this.user = {
       img: "assets/img/photo-crop.jpeg"
     }
@@ -79,6 +72,17 @@ export class MainPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MainPage');
+    this.api.post("showDetails", {"itemcode": "2"}).subscribe((data) =>   {
+      console.log(JSON.stringify(data));
+      
+      this.data = data
+      // debugger;
+      this.bigCardDatas = [
+        new ItemData(data)
+      ]
+      console.log(data)
+      // debugger;
+    });
 
   }
 
