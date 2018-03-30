@@ -13,13 +13,45 @@
 </ion-header>
 
 
-<ion-content padding class="image-content">
+<ion-content padding class="image-content" >
+
   <img src="https://www.w3schools.com/w3css/img_avatar3.png" class="profilePic" />
-  <div class= "user-content">
-  <font size="4em">
-  <div> Name : {{user.name}}</div>
-  <div> Phone No : {{user.phonenumber}}</div>
-  <div> Email : {{user.email}}</div>
-</font>
+  <!-- Add icon library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <div class="card">
+    <p class="name">{{user.name}}</p>
+    <p>{{user.address}}</p>
+    <br>
+
+    <!-- box 1 -->
+    <div class="pstyle" >
+    <p class="box" style="padding-top: 10px"> Email : {{user.email}}</p>
+    
+    <p class="box">Phone No : {{user.phonenumber}}</p>
+    <hr>
+    <p class="box"> Number of channels: channel count</p>
+  
+    <p class="box"> Favourite channel: channel name</p>
+    
+    <p class="box" style="padding-bottom: 10px"> Favourite genre: genre here</p>
+    
+  
+  <div style="text-align: center">
+    <a href="#">
+      <i class="fa fa-dribbble"></i>
+    </a>
+
+    <a href="#">
+      <i class="fa fa-twitter"></i>
+    </a>
+    <a href="#">
+      <i class="fa fa-linkedin"></i>
+    </a>
+    <a href="#">
+      <i class="fa fa-facebook"></i>
+    </a>
+  </div>
+  </div>
 </div>
 </ion-content>

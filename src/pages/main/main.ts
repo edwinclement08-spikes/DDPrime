@@ -8,7 +8,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SearchPage } from '../search/search';
 import { BigCardData } from '../../models/bigCard';
 
-import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media';
+// import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media';
 /**
  * Generated class for the MainPage page.
  *
@@ -30,7 +30,7 @@ export class MainPage {
   bigCardDatas: ItemData[];
 
 
-  constructor(public navCtrl: NavController, private streamingMedia: StreamingMedia, private storage: Storage, public navParams: NavParams, public api: Api, public userProvider: User) {
+  constructor(public navCtrl: NavController, private storage: Storage, public navParams: NavParams, public api: Api, public userProvider: User) {
     console.log('constructor MainPage');
     this.userProvider = userProvider;
 
@@ -85,14 +85,6 @@ export class MainPage {
           });
       }
     ).catch((err) => (console.log(err)));
-
-    // let options: StreamingVideoOptions = {
-    //   successCallback: () => { console.log('Video played') },
-    //   errorCallback: (e) => { console.log('Error streaming') },
-    //   orientation: 'landscape'
-    // };
-
-    // this.streamingMedia.playVideo('http://192.168.1.133:8080/temp', options);
 
   }
 
