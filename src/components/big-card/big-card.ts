@@ -24,8 +24,6 @@ export class BigCardComponent {
 
   constructor(public navCtrl: NavController, public api:Api, public sanitizer: DomSanitizer) {
     console.log('Hello BigCardComponent Component - constuctor');
-
-
   }
   ngOnInit(){
     console.log('Hello BigCardComponent Component - ngOnInit');

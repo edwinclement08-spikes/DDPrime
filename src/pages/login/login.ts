@@ -61,7 +61,7 @@ export class LoginPage {
             duration: 3000,
             position: 'bottom'
           });
-          toast.present();
+          // toast.present();
           this.navCtrl.setRoot(MainPage);
         }
       }

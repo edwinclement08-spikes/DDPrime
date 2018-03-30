@@ -66,6 +66,14 @@ export class MovieDetailsPage {
     this.newComment.rating = i + (half ? -0.5 : 0);
   }
 
+  getBuyOrFreeString()  {
+    if(this.data.cost == 0) {
+      return "Free";
+    } else {
+      return "Buy: ₹ " + this.data.cost
+    }
+  }
+
 
 
 }

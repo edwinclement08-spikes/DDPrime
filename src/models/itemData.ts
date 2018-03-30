@@ -8,6 +8,7 @@ export class ItemData {
     trailerUrl: any;
     description: any;
     comments: any;
+    cost: number;
     // TODO add cost, icon
  
     // TODO add an update ability
@@ -26,6 +27,7 @@ export class ItemData {
         this.trailerUrl = data.trailerUrl;
         this.description = data.description;
         this.comments = data.comments;
+        this.cost = data.cost;
     }
 }
  

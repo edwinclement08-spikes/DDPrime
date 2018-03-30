@@ -23,6 +23,7 @@ import { ListItemsProvider } from '../providers/list-items/list-items';
 import { ValidationProvider } from '../providers/validation/validation';
 
 import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media';
+import { ListCardComponent } from '../components/list-card/list-card';
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
 export function createTranslateLoader(http: HttpClient) {
@@ -48,12 +49,13 @@ export function provideSettings(storage: Storage) {
   declarations: [
     MyApp,
     MovieDetailsPage,
-    SearchPage,
+    SearchPage,ListCardComponent,
     UserPage
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -70,6 +72,7 @@ export function provideSettings(storage: Storage) {
     MovieDetailsPage,
     SearchPage,
     UserPage
+    
   ],
   providers: [
     InAppBrowser,

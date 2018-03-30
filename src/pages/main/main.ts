@@ -86,13 +86,13 @@ export class MainPage {
       }
     ).catch((err) => (console.log(err)));
 
-    let options: StreamingVideoOptions = {
-      successCallback: () => { console.log('Video played') },
-      errorCallback: (e) => { console.log('Error streaming') },
-      orientation: 'landscape'
-    };
+    // let options: StreamingVideoOptions = {
+    //   successCallback: () => { console.log('Video played') },
+    //   errorCallback: (e) => { console.log('Error streaming') },
+    //   orientation: 'landscape'
+    // };
 
-    this.streamingMedia.playVideo('http://192.168.1.133:8080/temp', options);
+    // this.streamingMedia.playVideo('http://192.168.1.133:8080/temp', options);
 
   }
 
