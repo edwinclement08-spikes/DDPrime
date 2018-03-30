@@ -15,10 +15,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'user.html',
 })
 export class UserPage {
-  user = {
+  user: any = {
     name: "",
     phonenumber: "",
-    email: ""
+    email: "",
+    address: ""
   }
   constructor(public navCtrl: NavController, public navParams: NavParams, public userProvider: User) {
     console.log("user page started");

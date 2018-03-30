@@ -7,13 +7,13 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>user-page</ion-title>
+    <ion-title>{{user.name}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding class="image-content" >
+<ion-content padding class="image-content">
 
   <img src="https://www.w3schools.com/w3css/img_avatar3.png" class="profilePic" />
   <!-- Add icon library -->
@@ -25,33 +25,33 @@
     <br>
 
     <!-- box 1 -->
-    <div class="pstyle" >
-    <p class="box" style="padding-top: 10px"> Email : {{user.email}}</p>
-    
-    <p class="box">Phone No : {{user.phonenumber}}</p>
-    <hr>
-    <p class="box"> Number of channels: channel count</p>
-  
-    <p class="box"> Favourite channel: channel name</p>
-    
-    <p class="box" style="padding-bottom: 10px"> Favourite genre: genre here</p>
-    
-  
-  <div style="text-align: center">
-    <a href="#">
-      <i class="fa fa-dribbble"></i>
-    </a>
+    <div class="pstyle">
+      <p class="box" style="padding-top: 10px">
+        <b>Email:</b> {{user.email}}</p>
+      <p class="box">
+        <b>Phone No:</b> {{user.phonenumber}}</p>
+      <hr>
+      <p class="box">
+        <b>Number of channels:</b> channel count</p>
+      <p class="box">
+        <b> Favourite channel: </b>channel name</p>
+      <p class="box" style="padding-bottom: 10px">
+        <b> Favourite genre:</b> genre here</p>
+      <div style="text-align: center">
+        <a href="#">
+          <i class="fa fa-dribbble"></i>
+        </a>
 
-    <a href="#">
-      <i class="fa fa-twitter"></i>
-    </a>
-    <a href="#">
-      <i class="fa fa-linkedin"></i>
-    </a>
-    <a href="#">
-      <i class="fa fa-facebook"></i>
-    </a>
+        <a href="#">
+          <i class="fa fa-twitter"></i>
+        </a>
+        <a href="#">
+          <i class="fa fa-linkedin"></i>
+        </a>
+        <a href="#">
+          <i class="fa fa-facebook"></i>
+        </a>
+      </div>
+    </div>
   </div>
-  </div>
-</div>
 </ion-content>

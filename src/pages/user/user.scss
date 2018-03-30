@@ -1,42 +1,37 @@
 page-user {
-    .image-content{
+    .image-content {
         text-align: center;
-        background-color:lightgrey;
-
-        .name{
-        font-size: 25px;            
-        font-family: Apple Chancery, cursive;
+        background-color: lightgrey;
+        .name {
+            font-size: 25px;
+            // font-family: Apple Chancery, cursive;
         }
+        p   {
+            margin:2px;
             
-    .pstyle{
-        text-align: left;
-         background-color: white;
-        border: black;
-            //height: 40px;
-        //padding-top: 10px;
+        }
+        .pstyle {
+            text-align: left;
+            background-color: white;
+            border: black; //height: 40px;
+            line-height: 1.5em;
+            //padding-top: 10px;
             //margin-top: 0%;
-        padding-left: 5px;
-        font: medium;
-        font-family: Apple Chancery, cursive;
-        border-radius: 5px;
-
+            padding-left: 5px;
+            font: medium;
+            // font-family: Apple Chancery, cursive;
+            border-radius: 5px;
+        }
     }
-    }
-    .profilePic{
-        margin-top: 20px;
-        height:200px;
-        width:200px;
+    .profilePic {
+        // margin-top: 20px;
+        height: 200px;
+        width: 200px;
         border-radius: 50%;
     }
-    .user-content{
+    .user-content {
         margin-top: 30px;
         text-align: left;
         margin-left: 20px;
     }
-
-    
 }
-
-
-
-
