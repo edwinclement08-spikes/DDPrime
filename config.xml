@@ -94,4 +94,5 @@
     <plugin name="cordova-sqlite-storage" spec="^2.3.0" />
     <plugin name="phonegap-plugin-push" spec="^2.2.2" />
     <engine name="android" spec="~7.0.0" />
+    <plugin name="com.hutchind.cordova.plugins.streamingmedia" spec="~0.1.4" />
 </widget>

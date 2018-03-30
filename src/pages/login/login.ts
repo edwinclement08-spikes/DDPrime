@@ -39,10 +39,10 @@ export class LoginPage {
     // this.navCtrl.setRoot(MainPage);
     // return;
 
-    this.storage.set('name', 'Max');
-    this.storage.get('age').then((val) => {
-      console.log('Your age is', val);
-    });
+    // this.storage.set('name', 'Max');
+    // this.storage.get('age').then((val) => {
+    //   console.log('Your age is', val);
+    // });
     this.user.login(this.account).subscribe((resp:any) => {
       console.log("HTTP response " + JSON.stringify(resp));
       if (resp) {
@@ -50,6 +50,9 @@ export class LoginPage {
         {
           this.navCtrl.setRoot(MainPage);
           this.token = resp.token;
+          console.log("User ");
+          
+          console.log(this.user.getCurrentUser());
         }
         else {
           this.loginErrorString = "Invaild email id or password"

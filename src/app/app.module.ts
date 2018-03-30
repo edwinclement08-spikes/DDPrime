@@ -22,7 +22,7 @@ import { MyApp } from './app.component';
 import { ListItemsProvider } from '../providers/list-items/list-items';
 import { ValidationProvider } from '../providers/validation/validation';
 
-
+import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media';
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
 export function createTranslateLoader(http: HttpClient) {
@@ -74,6 +74,7 @@ export function provideSettings(storage: Storage) {
   providers: [
     InAppBrowser,
     Api,
+    StreamingMedia,
     Push,
     Items,
     User,
