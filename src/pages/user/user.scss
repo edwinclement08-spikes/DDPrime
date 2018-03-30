@@ -1,6 +1,26 @@
 page-user {
     .image-content{
         text-align: center;
+        background-color:lightgrey;
+
+        .name{
+        font-size: 25px;            
+        font-family: Apple Chancery, cursive;
+        }
+            
+    .pstyle{
+        text-align: left;
+         background-color: white;
+        border: black;
+            //height: 40px;
+        //padding-top: 10px;
+            //margin-top: 0%;
+        padding-left: 5px;
+        font: medium;
+        font-family: Apple Chancery, cursive;
+        border-radius: 5px;
+
+    }
     }
     .profilePic{
         margin-top: 20px;
@@ -13,4 +33,10 @@ page-user {
         text-align: left;
         margin-left: 20px;
     }
+
+    
 }
+
+
+
+
