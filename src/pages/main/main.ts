@@ -78,14 +78,14 @@ export class MainPage {
         this.api.post("showDetails", { "itemcode": "10" }, data)
           .subscribe((data) => {
             console.log(JSON.stringify(data));
-
-            this.data = data
-            // debugger;
-            this.bigCardDatas = [
-              new ItemData(data)
-            ]
-            console.log(data)
-            // debugger;
+            if (data) {
+              this.data = data
+              // debugger;
+              this.bigCardDatas = [
+                new ItemData(data)
+              ]
+              console.log(data)
+            }
           });
       }
     ).catch((err) => (console.log(err)));

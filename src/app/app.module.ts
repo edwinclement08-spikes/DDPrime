@@ -1,3 +1,4 @@
+import { RemotePage } from './../pages/remote/remote';
 import { VideoPage } from './../pages/video/video';
 import { PaymentPage } from './../pages/payment/payment';
 import { UserPage } from './../pages/user/user';
@@ -23,6 +24,7 @@ import { Api } from '../providers/providers';
 import { MyApp } from './app.component';
 import { ListItemsProvider } from '../providers/list-items/list-items';
 import { ValidationProvider } from '../providers/validation/validation';
+import { LocalNotifications } from '@ionic-native/local-notifications'
 
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media';
@@ -85,9 +87,11 @@ export function provideSettings(storage: Storage) {
     Push,
     LocalNotifications,
     Items,
+    LocalNotifications,
     User,
     Camera,
     SplashScreen,
+    RemotePage,
     StatusBar,
     ScreenOrientation,
     ListItemsProvider,

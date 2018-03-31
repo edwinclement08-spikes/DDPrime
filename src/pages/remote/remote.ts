@@ -14,12 +14,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'remote.html',
 })
 export class RemotePage {
-
+  keyPressed:any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RemotePage');
   }
-
+  onClick(keyPress){
+    this.keyPressed=keyPress;
+    console.log(this.keyPressed);
+  }
 }
