@@ -1,3 +1,4 @@
+import { VideoPage } from './../pages/video/video';
 import { PaymentPage } from './../pages/payment/payment';
 import { UserPage } from './../pages/user/user';
 import { SearchPage } from './../pages/search/search';
@@ -50,8 +51,10 @@ export function provideSettings(storage: Storage) {
   declarations: [
     MyApp,
     MovieDetailsPage,
-    SearchPage,ListCardComponent,
+    SearchPage,
+    ListCardComponent,
     UserPage,
+    
   ],
   imports: [
     BrowserModule,
@@ -71,7 +74,8 @@ export function provideSettings(storage: Storage) {
     MyApp,
     MovieDetailsPage,
     SearchPage,
-    UserPage    
+    UserPage,
+    
   ],
   providers: [
     InAppBrowser,

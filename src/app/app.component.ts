@@ -1,3 +1,4 @@
+import { VideoPage } from './../pages/video/video';
 import { Component, ViewChild } from '@angular/core';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -42,6 +43,7 @@ export class MyApp {
     { title: 'Settings',  icon:"fa fa-cogs ",  component: 'SettingsPage' },
     { title: 'Remote',  icon:"fa fa-cogs ",  component: 'RemotePage' },
     { title: 'Internet',  icon:"fa fa-chrome ",  component: 'TutorialPage' },
+    { title: 'Video',  icon:"fa fa-chrome ",  component: 'VideoPage' },
     { title: 'Logout',  icon:"fa fa-arrow-square-left  ",  component: 'sfkjfs' },
     // TODO Addlogout page or something.
     
