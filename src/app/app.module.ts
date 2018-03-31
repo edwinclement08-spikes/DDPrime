@@ -1,3 +1,4 @@
+import { PaymentPage } from './../pages/payment/payment';
 import { UserPage } from './../pages/user/user';
 import { SearchPage } from './../pages/search/search';
 import { MovieDetailsPage } from './../pages/movie-details/movie-details';
@@ -50,12 +51,11 @@ export function provideSettings(storage: Storage) {
     MyApp,
     MovieDetailsPage,
     SearchPage,ListCardComponent,
-    UserPage
+    UserPage,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -71,8 +71,7 @@ export function provideSettings(storage: Storage) {
     MyApp,
     MovieDetailsPage,
     SearchPage,
-    UserPage
-    
+    UserPage    
   ],
   providers: [
     InAppBrowser,

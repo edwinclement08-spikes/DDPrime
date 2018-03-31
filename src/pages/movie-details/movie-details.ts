@@ -1,3 +1,4 @@
+import { PaymentPage } from './../payment/payment';
 import { Api } from './../../providers/api/api';
 import { ItemData } from './../../models/itemData';
 // import { BigCardData } from './../../models/bigCard';
@@ -32,7 +33,12 @@ export class MovieDetailsPage {
     // this.data.imgUrl = sanitizer.bypassSecurityTrustResourceUrl(this.data.imgUrl);
   }
 
+  loadPaymentPage(cost) {
 
+    this.navCtrl.push('PaymentPage',{
+      param1: this.data      
+    })
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad MovieDetailsPage');
   }

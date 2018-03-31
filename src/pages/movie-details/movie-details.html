@@ -21,7 +21,7 @@
         Add to Watchlist
       </div>
     </button>
-    <button ion-button class="btn-buy">
+    <button ion-button class="btn-buy" (click)="loadPaymentPage(this.data.cost)">
       <div>
         {{getBuyOrFreeString()}}
       </div>
