@@ -1,3 +1,4 @@
+import { Api } from './../../providers/api/api';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -15,7 +16,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class RemotePage {
   keyPressed:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public api:Api) {
   }
 
   ionViewDidLoad() {
@@ -24,5 +25,7 @@ export class RemotePage {
   onClick(keyPress){
     this.keyPressed=keyPress;
     console.log(this.keyPressed);
+    // req.params.button = 
+    // this.api.get("remote",)
   }
 }

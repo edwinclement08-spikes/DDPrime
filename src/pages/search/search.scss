@@ -7,4 +7,18 @@ page-search {
     .searchResultItems  {
         // margin-bottom:10px;
     }
+
+    .genreSelector{
+        padding:5px;
+        background: #ddd;
+        border-radius: 3px;
+        margin:4px;
+    }
+    .selectedGenre  {
+        background: #777;
+    }
+    .genreParent    {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
 }

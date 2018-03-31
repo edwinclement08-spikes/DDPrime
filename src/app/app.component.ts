@@ -45,7 +45,7 @@ export class MyApp {
     { title: 'Internet',  icon:"fa fa-chrome ",  component: 'TutorialPage' },
     { title: 'Video',  icon:"fa fa-chrome ",  component: 'VideoPage' },
     { title: 'Remote',  icon:"fa fa-mobile ",  component: 'RemotePage' },
-    { title: 'Logout',  icon:"fa fa-arrow-square-left  ",  component: 'sfkjfs' },
+    { title: 'Logout',  icon:"fa fa-arrow-square-left  ",  component: 'WelcomePage' },
     // TODO Addlogout page or something.
     
     // { title: 'Favourites', component: 'TutorialPage' },

@@ -6,24 +6,24 @@
 
 </ion-header>
 
-
 <ion-content>
   <ion-searchbar (ionInput)="refreshItemList($event)" placeholder="{{ 'SEARCH_PLACEHOLDER' | translate }}"></ion-searchbar>
-  <ion-list>
-    <button ion-item (click)="refreshItemList(item)" *ngFor="let item of currentItems">
+  <!-- <ion-list>
+    <button ion-item (click)="refreshItemList(item)" *ngFor="let item of currentItems"  >
       {{item.name}} {{item.id}}
-      <!-- <ion-avatar item-start>
-        <img [src]="item.profilePic" />
-      </ion-avatar>
-      <h2>{{item.name}}</h2>
-      <p>{{item.about}}</p> -->
-      <!-- <ion-note item-end *ngIf="item.note">{{item.note}}</ion-note> -->
-
+      
     </button>
-  </ion-list>
+
+  </ion-list> -->
+  <!-- <ion-list> -->
+    <div class="genreParent"> 
+        <span class="genreSelector" *ngFor="let genre of genres" (click)="genreSelected(genre)" [ngClass]="{'selectedGenre':currentGenre==genre}">{{genre}}</span>
+
+    </div>
+  <!-- </ion-list> -->
   <div class="searchResultBox">
-    <div *ngFor="let x of listCardData" class="searchResultItems">
-      <list-card [data]="x" (click)="openPage(x)" >
+    <div *ngFor="let x of currentItems" class="searchResultItems">
+      <list-card [data]="x" (click)="openPage(x)">
       </list-card>
 
     </div>

@@ -14,17 +14,24 @@ import { MovieDetailsPage } from '../movie-details/movie-details';
 })
 export class SearchPage {
 
+  genres: any = [
+    'All', 'Fiction', 'Comedy', 'Education', "Classic"
+  ];
   currentItems: any = [];
   listItems: any;
+  currentGenre: any;
 
   listCardData: ItemData[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public listItemsProvider: ListItemsProvider) {
     // constructor(public navCtrl: NavController, public navParams: NavParams, public items: Items,  public listItemsProvider:ListItemsProvider) { 
-    console.log("sfsfe");
-    this.listItems = listItemsProvider.getItems().then((data) => { this.initArray(data) });
-    console.log("sfsfe1");
+    // console.log("sfsfe");
+    
+    // console.log("sfsfe1");
     this.listCardData = [];
+    this.currentGenre = 'All';
+    this.listItemsProvider.getItems().then((data) => { this.initArray(data) });
+    
   }
 
   initArray(datax) {
@@ -36,7 +43,25 @@ export class SearchPage {
     }
   }
 
+  genreSelected(genre) {
+    this.currentGenre = genre;
+
+    if(genre == 'All')  {
+      this.currentItems = this.listCardData; 
+      return; 
+    }
+    this.currentItems = [];
+    var i;
+    for (i = 0; i < this.listCardData.length; i++) {
+      if (this.listCardData[i].genre == this.currentGenre) {
+        this.currentItems.push(this.listCardData[i]);
+      }
+    }
+
+  }
+
   ngOnInit() {
+    this.listItemsProvider.getItems().then((data) => { this.initArray(data) });
 
   }
 
@@ -49,21 +74,21 @@ export class SearchPage {
   refreshItemList(ev) {
     let val = ev.target.value.trim();
     if (!val) {
-      this.currentItems = [];
+      this.currentItems = this.listCardData;
       return;
     } else {
       this.currentItems = this.query({
-        name: val
+        title: val
       });
     }
   }
 
   query(params?: any) {
     if (!params) {
-      return this.listItems;
+      return this.listCardData;
     }
 
-    return this.listItems.filter((item) => {
+    return this.listCardData.filter((item) => {
       for (let key in params) {
         let field = item[key];
         if (typeof field == 'string' && field.toLowerCase().indexOf(params[key].toLowerCase()) >= 0) {

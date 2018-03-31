@@ -13,6 +13,29 @@ page-remote {
     .controls{
         .volume{
             font-size: 2em;
+            width:45%;
+            float: left;
+            margin-left: 5vh;
+            .sign{
+                font-size: 2em; 
+            }
+        }
+        .channel{
+            text-align: right;
+            font-size: 2em;
+            width:45%;
+            float: right;
+            margin-right: 5vh;
+            .sign{
+                font-size: 2em; 
+            }
+        }
+        .navbutton{
+            width:10vh;
+            height: 10vh;
+            border-radius: 12vh;
+            text-align: center;
+            align-content: center;
         }
     }
 }

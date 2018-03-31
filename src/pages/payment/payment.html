@@ -68,12 +68,12 @@
       </div>
 
       <!-- Buttons -->
-      <button type="submit" class="proceed-btn">
+      <button type="submit" class="proceed-btn" (click)="buy()">
         <a href="#">Proceed</a>
-      </button>
-      <button type="submit" class="paypal-btn">
-        <a href="#">Pay With</a>
       </button>
     </div>
   </form>
+
+  {{message}}
+  {{error}}
 </ion-content>

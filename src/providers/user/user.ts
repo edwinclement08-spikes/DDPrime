@@ -97,6 +97,9 @@ export class User {
    */
   logout() {
     this._user = null;
+    this.token = null;
+    this.storage.set('user', null);
+    this.storage.set('token', null);
   }
 
   /**
