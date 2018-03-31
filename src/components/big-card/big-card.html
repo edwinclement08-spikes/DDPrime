@@ -9,4 +9,5 @@
   <div class="title">{{data.title}}</div>
   <div class="genreYearDuration">{{data.genre}} ({{data.releaseYear}}, {{data.duration}} hour(s))</div>
   <img class="thumbnail" [src]="data.imgUrl" />
+  <span class="overlay" (click)="addReminder()">Remind!</span>
 </div>

@@ -15,6 +15,8 @@
 
 <ion-content padding>
   <div class="contentArea_movieDetails">
+    <span class="overlay" (click)="addReminder()">Remind!</span>
+
     <img class="thumbnail" [src]="this.data.imgUrl" (click)="clickedPreview()" />
     <button ion-button class="btn-addToWatchlist">
       <div>
@@ -72,7 +74,7 @@
         <div class="star-rating">
           <span class="ratingBar fa " *ngFor="let a of [1,2,3,4,5]; index as i" [ngClass]="{ 'fa-star' : comment.rating - i,
             'fa-star-half-o' : comment.rating == i+0.5,
-            'fa-star-o' : comment.rating < i+1}" >
+            'fa-star-o' : comment.rating < i+1}">
           </span>
         </div>
         <hr> {{comment.description}}

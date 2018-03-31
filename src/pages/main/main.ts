@@ -1,3 +1,4 @@
+import { LocalNotifications } from '@ionic-native/local-notifications';
 import { User } from './../../providers/user/user';
 import { UserPage } from './../user/user';
 import { Api } from './../../providers/api/api';
@@ -30,7 +31,7 @@ export class MainPage {
   bigCardDatas: ItemData[];
 
 
-  constructor(public navCtrl: NavController, private storage: Storage, public navParams: NavParams, public api: Api, public userProvider: User) {
+  constructor(public navCtrl: NavController, private localNotifications: LocalNotifications, private storage: Storage, public navParams: NavParams, public api: Api, public userProvider: User) {
     console.log('constructor MainPage');
     this.userProvider = userProvider;
 
@@ -69,10 +70,13 @@ export class MainPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad MainPage');
 
+
+    
+
     this.userProvider.getToken().then(
       (data) => {
         this.api.post("showDetails", { "itemcode": "10" }, data)
-        .subscribe((data) => {
+          .subscribe((data) => {
             console.log(JSON.stringify(data));
 
             this.data = data

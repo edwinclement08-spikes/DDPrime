@@ -1,3 +1,4 @@
+import { LocalNotifications } from '@ionic-native/local-notifications';
 import { ItemData } from './../../models/itemData';
 import { MovieDetailsPage } from './../../pages/movie-details/movie-details';
 // import { BigCardData } from './../../models/bigCard';
@@ -22,22 +23,33 @@ export class BigCardComponent {
   @Input() data: ItemData;
   @Input() img: string;
 
-  constructor(public navCtrl: NavController, public api:Api, public sanitizer: DomSanitizer) {
+  constructor(public navCtrl: NavController, public localNotifications: LocalNotifications,public api: Api, public sanitizer: DomSanitizer) {
     console.log('Hello BigCardComponent Component - constuctor');
   }
-  ngOnInit(){
+  ngOnInit() {
     console.log('Hello BigCardComponent Component - ngOnInit');
     // console.log(this.data);
-    
+
     this.data.imgUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.data.imgUrl);
 
   }
 
-  openMovieDetailsPage()  {
- 
+  openMovieDetailsPage() {
+
     this.navCtrl.push(MovieDetailsPage, {
       param1: this.data,
-  });
+    });
   }
-  
+
+  addReminder() {
+    // Schedule a single notification
+    this.localNotifications.schedule({
+      id: 1,
+      text: 'Watch ' + this.data.title + " at " + this.data.timing_start,
+      // sound: 'file://sound.mp3' ,
+      data: { secret: "sfseddfsdf" }
+    });
+
+  }
+
 }

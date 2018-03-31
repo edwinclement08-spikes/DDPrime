@@ -97,3 +97,15 @@ page-movie-details {
         }
     }
 }
+
+.overlay {
+    position: absolute;
+    top: 2em;
+    right: 3em;
+    text-align: center;
+    // width: 100%;
+    color: black;
+    background: white;
+    border-radius: 5px;
+    padding: 4px 5px;
+}

@@ -1,3 +1,4 @@
+import { LocalNotifications } from '@ionic-native/local-notifications';
 import { PaymentPage } from './../payment/payment';
 import { Api } from './../../providers/api/api';
 import { ItemData } from './../../models/itemData';
@@ -26,11 +27,24 @@ export class MovieDetailsPage {
 
   showNewCommentSection: boolean;
 
-  constructor(public api: Api, public navCtrl: NavController, public navParams: NavParams, private sanitizer: DomSanitizer, private iab: InAppBrowser) {
+  constructor(public api: Api, public localNotifications: LocalNotifications, public navCtrl: NavController, public navParams: NavParams, private sanitizer: DomSanitizer, private iab: InAppBrowser) {
     this.data = navParams.get('param1');
     this.showNewCommentSection = false;
     // this.data.trailerUrl = sanitizer.bypassSecurityTrustResourceUrl(this.data.trailerUrl);
     // this.data.imgUrl = sanitizer.bypassSecurityTrustResourceUrl(this.data.imgUrl);
+  }
+
+
+  addReminder() {
+    // Schedule a single notification
+    this.localNotifications.schedule({
+      id: 1,
+      text: 'Watch ' + this.data.title + " at " + this.data.timing_start,
+      // sound: 'file://sound.mp3' ,
+      data: { secret: "sfseddfsdf" }
+    });
+
+
   }
 
   loadPaymentPage(cost) {

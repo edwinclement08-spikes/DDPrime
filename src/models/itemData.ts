@@ -9,6 +9,12 @@ export class ItemData {
     description: any;
     comments: any;
     cost: number;
+    timing_start:any;
+    timing_end:any;
+    itemCode:any;
+    channel_id:any;
+    channel_name:any;
+    
     // TODO add cost, icon
  
     // TODO add an update ability
@@ -28,6 +34,11 @@ export class ItemData {
         this.description = data.description;
         this.comments = data.comments;
         this.cost = data.cost;
+        this.timing_start = data.timing_start;
+        this.timing_end = data.timing_end;
+        this.itemCode = data.itemCode;
+        this.channel_id = data.channel_id;
+        this.channel_name = data.channel_name;
     }
 }
  

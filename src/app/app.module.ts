@@ -24,6 +24,7 @@ import { MyApp } from './app.component';
 import { ListItemsProvider } from '../providers/list-items/list-items';
 import { ValidationProvider } from '../providers/validation/validation';
 
+import { LocalNotifications } from '@ionic-native/local-notifications';
 import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media';
 import { ListCardComponent } from '../components/list-card/list-card';
 // The translate loader needs to know where to load i18n files
@@ -82,6 +83,7 @@ export function provideSettings(storage: Storage) {
     Api,
     StreamingMedia,
     Push,
+    LocalNotifications,
     Items,
     User,
     Camera,

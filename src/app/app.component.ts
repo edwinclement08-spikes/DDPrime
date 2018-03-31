@@ -1,3 +1,4 @@
+import { LocalNotifications } from '@ionic-native/local-notifications';
 import { VideoPage } from './../pages/video/video';
 import { Component, ViewChild } from '@angular/core';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -61,12 +62,13 @@ export class MyApp {
     // { title: 'Search', component: 'SearchPage' }
   ]
 
-  constructor(private translate: TranslateService, private screenOrientation: ScreenOrientation, platform: Platform, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {
+  constructor(public localNotifications: LocalNotifications,private translate: TranslateService, private screenOrientation: ScreenOrientation, platform: Platform, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      
 
       // if(platform.is('cordova')) {
       //    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);  
