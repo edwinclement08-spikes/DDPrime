@@ -4,6 +4,7 @@ import { MovieDetailsPage } from './../../pages/movie-details/movie-details';
 import { Component, Input } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Api } from '../../providers/providers';
+import { DomSanitizer } from '@angular/platform-browser';
 
 /**
  * Generated class for the BigCardComponent component.
@@ -21,15 +22,15 @@ export class BigCardComponent {
   @Input() data: ItemData;
   @Input() img: string;
 
-  constructor(public navCtrl: NavController, public api:Api) {
+  constructor(public navCtrl: NavController, public api:Api, public sanitizer: DomSanitizer) {
     console.log('Hello BigCardComponent Component - constuctor');
-
   }
   ngOnInit(){
     console.log('Hello BigCardComponent Component - ngOnInit');
     // console.log(this.data);
     
-   
+    this.data.imgUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.data.imgUrl);
+
   }
 
   openMovieDetailsPage()  {

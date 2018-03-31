@@ -1,3 +1,4 @@
+import { PaymentPage } from './../payment/payment';
 import { Api } from './../../providers/api/api';
 import { ItemData } from './../../models/itemData';
 // import { BigCardData } from './../../models/bigCard';
@@ -32,7 +33,12 @@ export class MovieDetailsPage {
     // this.data.imgUrl = sanitizer.bypassSecurityTrustResourceUrl(this.data.imgUrl);
   }
 
+  loadPaymentPage(cost) {
 
+    this.navCtrl.push('PaymentPage',{
+      param1: this.data      
+    })
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad MovieDetailsPage');
   }
@@ -64,6 +70,14 @@ export class MovieDetailsPage {
     console.log(half);
 
     this.newComment.rating = i + (half ? -0.5 : 0);
+  }
+
+  getBuyOrFreeString()  {
+    if(this.data.cost == 0) {
+      return "Free";
+    } else {
+      return "Buy: ₹ " + this.data.cost
+    }
   }
 
 

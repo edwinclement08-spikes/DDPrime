@@ -42,17 +42,20 @@ export class LoginPage {
   doLogin() {
     // this.navCtrl.setRoot(mmmmmmMainPage);
     // return;
-    this.sendNotification();
-    this.storage.set('name', 'Max');
-    this.storage.get('age').then((val) => {
-      console.log('Your age is', val);
-    });
-    this.user.login(this.account).subscribe((resp: any) => {
+
+    // this.storage.set('name', 'Max');
+    // this.storage.get('age').then((val) => {
+    //   console.log('Your age is', val);
+    // });
+    this.user.login(this.account).subscribe((resp:any) => {
       console.log("HTTP response " + JSON.stringify(resp));
       if (resp) {
         if (resp.status === "success") {
           this.navCtrl.setRoot(MainPage);
           this.token = resp.token;
+          console.log("User ");
+          
+          console.log(this.user.getCurrentUser());
         }
         else {
           this.loginErrorString = "Invaild email id or password"
@@ -61,7 +64,7 @@ export class LoginPage {
             duration: 3000,
             position: 'bottom'
           });
-          toast.present();
+          // toast.present();
           this.navCtrl.setRoot(MainPage);
         }
       }

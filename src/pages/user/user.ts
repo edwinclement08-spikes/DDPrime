@@ -15,16 +15,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'user.html',
 })
 export class UserPage {
-  user = {
-    name:"Edwin Clement",
-    phonenumber:9833319513,
-    address:"BARC"
+  user: any = {
+    name: "",
+    phonenumber: "",
+    email: "",
+    address: ""
   }
   constructor(public navCtrl: NavController, public navParams: NavParams, public userProvider: User) {
     console.log("user page started");
-    console.log(userProvider.getCurrentUser());
-  } 
+  }
   ionViewDidLoad() {
-    console.log('ionViewDidLoad UserPage');
+    console.log('UserPage::Current User');
+    this.user = this.userProvider.getCurrentUser();
+    console.log(this.user);
+
+
   }
 }

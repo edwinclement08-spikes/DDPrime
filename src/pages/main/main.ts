@@ -8,7 +8,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SearchPage } from '../search/search';
 import { BigCardData } from '../../models/bigCard';
 
-
+// import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media';
 /**
  * Generated class for the MainPage page.
  *

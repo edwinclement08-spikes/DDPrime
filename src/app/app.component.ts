@@ -39,7 +39,8 @@ export class MyApp {
     { title: 'Home',      icon:"fa fa-home",  component: 'MainPage' },
     { title: 'Favourites',icon:"fa fa-star",  component: 'TutorialPage' },
     { title: 'Timeline',  icon:"fa fa-hourglass",  component: 'TutorialPage' },
-    { title: 'Settings',  icon:"fa fa-cogs ",  component: 'TutorialPage' },
+    { title: 'Settings',  icon:"fa fa-cogs ",  component: 'SettingsPage' },
+    { title: 'Internet',  icon:"fa fa-chrome ",  component: 'TutorialPage' },
     { title: 'Remote',  icon:"fa fa-mobile ",  component: 'RemotePage' },
     { title: 'Logout',  icon:"fa fa-arrow-square-left  ",  component: 'sfkjfs' },
     // TODO Addlogout page or something.

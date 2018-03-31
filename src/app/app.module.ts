@@ -1,4 +1,5 @@
 import { RemotePage } from './../pages/remote/remote';
+import { PaymentPage } from './../pages/payment/payment';
 import { UserPage } from './../pages/user/user';
 import { SearchPage } from './../pages/search/search';
 import { MovieDetailsPage } from './../pages/movie-details/movie-details';
@@ -24,6 +25,8 @@ import { ListItemsProvider } from '../providers/list-items/list-items';
 import { ValidationProvider } from '../providers/validation/validation';
 import { LocalNotifications } from '@ionic-native/local-notifications'
 
+import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media';
+import { ListCardComponent } from '../components/list-card/list-card';
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
 export function createTranslateLoader(http: HttpClient) {
@@ -49,8 +52,8 @@ export function provideSettings(storage: Storage) {
   declarations: [
     MyApp,
     MovieDetailsPage,
-    SearchPage,
-    UserPage
+    SearchPage,ListCardComponent,
+    UserPage,
   ],
   imports: [
     BrowserModule,
@@ -70,11 +73,12 @@ export function provideSettings(storage: Storage) {
     MyApp,
     MovieDetailsPage,
     SearchPage,
-    UserPage
+    UserPage    
   ],
   providers: [
     InAppBrowser,
     Api,
+    StreamingMedia,
     Push,
     Items,
     LocalNotifications,
