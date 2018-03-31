@@ -39,8 +39,7 @@ export class MyApp {
 
   pages: any[] = [
     { title: 'Home',      icon:"fa fa-home",  component: 'MainPage' },
-    { title: 'Favourites',icon:"fa fa-star",  component: 'TutorialPage' },
-    { title: 'Timeline',  icon:"fa fa-hourglass",  component: 'TutorialPage' },
+    { title: 'Recommendation',icon:"fa fa-star",  component: 'RecommendationPage' },
     { title: 'Settings',  icon:"fa fa-cogs ",  component: 'SettingsPage' },
     { title: 'Internet',  icon:"fa fa-chrome ",  component: 'TutorialPage' },
     { title: 'Video',  icon:"fa fa-chrome ",  component: 'VideoPage' },

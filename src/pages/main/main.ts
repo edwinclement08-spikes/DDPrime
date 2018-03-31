@@ -66,12 +66,13 @@ export class MainPage {
 
   }
 
-
+  allData:any;
   ionViewDidLoad() {
     console.log('ionViewDidLoad MainPage');
 
-
+    // this.allData;
     
+    // this.api.get("getItems").then(data)
 
     this.userProvider.getToken().then(
       (data) => {
