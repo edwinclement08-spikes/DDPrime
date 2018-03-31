@@ -24,6 +24,7 @@
     "@ionic-native/camera": "4.3.3",
     "@ionic-native/core": "4.5.3",
     "@ionic-native/in-app-browser": "^4.6.0",
+    "@ionic-native/local-notifications": "^4.6.0",
     "@ionic-native/push": "^4.6.0",
     "@ionic-native/screen-orientation": "^4.6.0",
     "@ionic-native/splash-screen": "4.5.3",
@@ -32,11 +33,14 @@
     "@ngx-translate/core": "8.0.0",
     "@ngx-translate/http-loader": "^2.0.0",
     "cordova-android": "7.0.0",
+    "cordova-browser": "5.0.3",
+    "cordova-plugin-badge": "^0.8.7",
     "cordova-plugin-compat": "^1.2.0",
     "cordova-plugin-device": "^2.0.1",
     "cordova-plugin-inappbrowser": "^2.0.2",
     "cordova-plugin-ionic-keyboard": "^2.0.5",
     "cordova-plugin-ionic-webview": "^1.1.16",
+    "cordova-plugin-local-notification": "^0.9.0-beta.2",
     "cordova-plugin-qrscanner": "^2.5.0",
     "cordova-plugin-screen-orientation": "^3.0.1",
     "cordova-plugin-splashscreen": "^5.0.2",
@@ -67,10 +71,12 @@
       "cordova-plugin-inappbrowser": {},
       "cordova-sqlite-storage": {},
       "phonegap-plugin-push": {},
-      "cordova-plugin-qrscanner": {}
+      "cordova-plugin-qrscanner": {},
+      "cordova-plugin-local-notification": {}
     },
     "platforms": [
-      "android"
+      "android",
+      "browser"
     ]
   },
   "config": {

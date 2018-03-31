@@ -1,0 +1,18 @@
+page-remote {
+    #center{
+        text-align: center;
+        .number{
+            background-color:#CFD8DC;
+            width: 31.5%;
+            margin: 0.5%;
+            height: 12vh;
+            margin-bottom:.8vh;
+            border-radius: 12vh;    
+        }
+    }
+    .controls{
+        .volume{
+            font-size: 2em;
+        }
+    }
+}

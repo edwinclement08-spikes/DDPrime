@@ -1,3 +1,4 @@
+import { RemotePage } from './../pages/remote/remote';
 import { UserPage } from './../pages/user/user';
 import { SearchPage } from './../pages/search/search';
 import { MovieDetailsPage } from './../pages/movie-details/movie-details';
@@ -21,7 +22,7 @@ import { Api } from '../providers/providers';
 import { MyApp } from './app.component';
 import { ListItemsProvider } from '../providers/list-items/list-items';
 import { ValidationProvider } from '../providers/validation/validation';
-
+import { LocalNotifications } from '@ionic-native/local-notifications'
 
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
@@ -76,9 +77,11 @@ export function provideSettings(storage: Storage) {
     Api,
     Push,
     Items,
+    LocalNotifications,
     User,
     Camera,
     SplashScreen,
+    RemotePage,
     StatusBar,
     ScreenOrientation,
     ListItemsProvider,
